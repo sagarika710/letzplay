@@ -48,7 +48,7 @@ export default function Servicelist({navigation, route}) {
   useEffect(() => {
     apicaller(
       //'services-by-sport-center-id?sports_center_id=62bbcb290f31d4e3cce6c553&sports_category_id=62b564a927d097a67fcb9936',
-      `services-by-sport-center-id?sports_center_Fid=${spid}&sports_category_id=${scid}`,
+      `services-by-sport-center-id?sports_center_id=${spid}&sports_category_id=${scid}`,
       null,
       'get',
       `Bearer ${Token}`,
@@ -62,7 +62,7 @@ export default function Servicelist({navigation, route}) {
       });
   }, []);
   if (data) {
-    console.log(data[0].sports_center_id);
+    // console.log(data[0].sports_center_id);
     apicaller(
       // `get-category-by-sports-center/${data[0].sports_center_id}`,62bbcb290f31d4e3cce6c553
       `get-category-by-sports-center/${spid}`,

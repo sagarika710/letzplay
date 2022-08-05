@@ -77,7 +77,7 @@ export default function SportsAvailabeHere(props) {
     dispatch(setSportid(false));
     apicaller(
       // `get-category-by-sports-center/62bbcb290f31d4e3cce6c553`,
-      `get-category-by-sports-center/62ec1b904af75d5c52d1caa5`,
+      `get-category-by-sports-center/${props.id}`,
       null,
       'get',
       null,
