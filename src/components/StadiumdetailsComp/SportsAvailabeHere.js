@@ -83,6 +83,7 @@ export default function SportsAvailabeHere(props) {
       null,
     )
       .then(res => {
+        ``;
         console.log('get-category-by-sports-center', res.data.category);
         setSports(res.data.category);
       })
