@@ -27,9 +27,9 @@
 15-->[:react-native-firebase_auth] E:\LETZPLAY_UPDATED\Letzplay\node_modules\@react-native-firebase\auth\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:22-76
 16
 17    <queries>
-17-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:11:5-37:15
+17-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:11:5-37:15
 18        <intent>
-18-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:12:9-18:18
+18-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:12:9-18:18
 19            <action android:name="android.intent.action.VIEW" />
 19-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\User\.gradle\caches\transforms-3\782f46167c3abdf4395492bbc0e8b13d\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:17-69
 19-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\User\.gradle\caches\transforms-3\782f46167c3abdf4395492bbc0e8b13d\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:25-66
@@ -41,7 +41,7 @@
 23-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\User\.gradle\caches\transforms-3\782f46167c3abdf4395492bbc0e8b13d\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:42:21-48
 24        </intent>
 25        <intent>
-25-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:19:9-28:18
+25-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:19:9-28:18
 26            <action android:name="android.intent.action.VIEW" />
 26-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\User\.gradle\caches\transforms-3\782f46167c3abdf4395492bbc0e8b13d\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:17-69
 26-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\User\.gradle\caches\transforms-3\782f46167c3abdf4395492bbc0e8b13d\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:25-66
@@ -59,16 +59,16 @@
 33-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\User\.gradle\caches\transforms-3\782f46167c3abdf4395492bbc0e8b13d\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:42:21-48
 34        </intent>
 35        <intent>
-35-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:29:9-31:18
+35-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:29:9-31:18
 36            <action android:name="android.intent.action.MAIN" />
 36-->E:\LETZPLAY_UPDATED\Letzplay\android\app\src\main\AndroidManifest.xml:11:9-61
 36-->E:\LETZPLAY_UPDATED\Letzplay\android\app\src\main\AndroidManifest.xml:11:17-58
 37        </intent>
 38        <intent>
-38-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:32:9-36:18
+38-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:32:9-36:18
 39            <action android:name="android.intent.action.SEND" />
-39-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:33:13-65
-39-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:33:21-62
+39-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:33:13-65
+39-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:33:21-62
 40
 41            <data android:mimeType="*/*" />
 41-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\User\.gradle\caches\transforms-3\782f46167c3abdf4395492bbc0e8b13d\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:39:17-42:51
@@ -154,11 +154,11 @@
 83            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
 83-->[:react-native-razorpay] E:\LETZPLAY_UPDATED\Letzplay\node_modules\react-native-razorpay\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-83
 84            android:exported="true"
-84-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:51:13-36
+84-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:51:13-36
 85            android:theme="@style/CheckoutTheme" >
-85-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:52:13-49
+85-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:52:13-49
 86            <intent-filter>
-86-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:53:13-59:29
+86-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:53:13-59:29
 87                <action android:name="android.intent.action.MAIN" />
 87-->E:\LETZPLAY_UPDATED\Letzplay\android\app\src\main\AndroidManifest.xml:11:9-61
 87-->E:\LETZPLAY_UPDATED\Letzplay\android\app\src\main\AndroidManifest.xml:11:17-58
@@ -304,25 +304,25 @@
 163        </service>
 164
 165        <receiver
-165-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:40:9-46:20
+165-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:40:9-46:20
 166            android:name="com.razorpay.RzpTokenReceiver"
-166-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:41:13-57
+166-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:41:13-57
 167            android:exported="false" >
-167-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:42:13-37
+167-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:42:13-37
 168            <intent-filter>
-168-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:43:13-45:29
+168-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:43:13-45:29
 169                <action android:name="rzp.device_token.share" />
-169-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:44:17-65
-169-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:44:25-62
+169-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:44:17-65
+169-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:44:25-62
 170            </intent-filter>
 171        </receiver>
 172
 173        <meta-data
-173-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:62:9-64:58
+173-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:62:9-64:58
 174            android:name="com.razorpay.plugin.googlepay_all"
-174-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:63:13-61
+174-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:63:13-61
 175            android:value="com.razorpay.RzpGpayMerged" /> <!-- Needs to be explicitly declared on P+ -->
-175-->[com.razorpay:checkout:1.6.22] C:\Users\User\.gradle\caches\transforms-3\3de68d48aec9fd43107137611e9c8317\transformed\jetified-checkout-1.6.22\AndroidManifest.xml:64:13-55
+175-->[com.razorpay:checkout:1.6.23] C:\Users\User\.gradle\caches\transforms-3\988276d39b6d2a9619eb883f8e17851a\transformed\jetified-checkout-1.6.23\AndroidManifest.xml:64:13-55
 176        <uses-library
 176-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\User\.gradle\caches\transforms-3\9542e99fad27b6698485da01260a0c98\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:39:9-41:40
 177            android:name="org.apache.http.legacy"

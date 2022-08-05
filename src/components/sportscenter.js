@@ -5,14 +5,17 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import {apicaller} from '../screens/api';
-import {getToken} from '../../Redux/slices/userSlice';
+import {getLang, getLat, getToken} from '../../Redux/slices/userSlice';
 import {useSelector, useDispatch} from 'react-redux';
 import {useState} from 'react';
 import {Rating, AirbnbRating} from 'react-native-ratings';
 const Sportscenter = props => {
   const navigation = useNavigation();
   const Token = useSelector(getToken);
+  const lat = useSelector(getLat);
+  const lang = useSelector(getLang);
   const [Sportsname, setSportsname] = useState();
+
   if (props.data.sports_centre_image[0] != []) {
     console.log(
       'Rating is: ',
@@ -22,8 +25,8 @@ const Sportscenter = props => {
 
   useEffect(() => {
     apicaller(
-      // ` sports-center?longitude=${lat}&latitude=${lang}`
-      'sports-center?longitude=72.4997&latitude=22.30',
+      ` sports-center?longitude=${lat}&latitude=${lang}`,
+      // 'sports-center?longitude=72.4997&latitude=22.30',
       null,
       'get',
       `Bearer ${Token}`,

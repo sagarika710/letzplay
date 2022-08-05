@@ -7,7 +7,7 @@ const Privacypolicy = () => {
   const [Privacypolicy, setPrivacypolicy] = useState([]);
 
   useEffect(() => {
-    apicaller('getterms', null, 'get', null).then(res => {
+    apicaller('getprivacy', null, 'get', null).then(res => {
       console.log(JSON.stringify(res.data));
       setPrivacypolicy(res.data);
     });

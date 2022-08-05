@@ -10,6 +10,7 @@ import {
   Dimensions,
   Alert,
   Button,
+  ActivityIndicator,
 } from 'react-native';
 import Icons from 'react-native-vector-icons/Feather';
 import DatePicker from 'react-native-date-picker';
@@ -82,7 +83,7 @@ export default function Ragistration(props) {
         }
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.params);
       });
   }
 

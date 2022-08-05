@@ -15,7 +15,13 @@ import statium from '../assets/img/Sports/Net.png';
 import cricketbat from '../assets/img/Sports/Cricket_small.png';
 import {useNavigation} from '@react-navigation/native';
 import {api} from '../styles/Api';
-import {getId, getToken, setService} from '../../Redux/slices/userSlice';
+import {
+  getId,
+  getSportid,
+  getStadid,
+  getToken,
+  setService,
+} from '../../Redux/slices/userSlice';
 import {useSelector, useDispatch} from 'react-redux';
 import Servicelistitem from '../components/Servicelistitem';
 
@@ -30,6 +36,8 @@ export default function Servicelist({navigation, route}) {
   const [data, setData] = useState('');
   const [Sname, setSname] = useState('');
   const Idrd = useSelector(getId);
+  const spid = useSelector(getStadid);
+  const scid = useSelector(getSportid);
   const Token = useSelector(getToken);
   const dispatch = useDispatch();
   var [sliststate, setSliststate] = useState([]);
@@ -39,7 +47,8 @@ export default function Servicelist({navigation, route}) {
   var axios = require('axios');
   useEffect(() => {
     apicaller(
-      `services-by-sport-center-id?sports_center_id=62bbcb290f31d4e3cce6c553&sports_category_id=62b564a927d097a67fcb9936`,
+      //'services-by-sport-center-id?sports_center_id=62bbcb290f31d4e3cce6c553&sports_category_id=62b564a927d097a67fcb9936',
+      `services-by-sport-center-id?sports_center_Fid=${spid}&sports_category_id=${scid}`,
       null,
       'get',
       `Bearer ${Token}`,
@@ -56,7 +65,7 @@ export default function Servicelist({navigation, route}) {
     console.log(data[0].sports_center_id);
     apicaller(
       // `get-category-by-sports-center/${data[0].sports_center_id}`,62bbcb290f31d4e3cce6c553
-      `get-category-by-sports-center/62bbcb290f31d4e3cce6c553`,
+      `get-category-by-sports-center/${spid}`,
       null,
       'get',
       null,

@@ -300,23 +300,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\3de68d48aec9fd43107137611e9c8317\\transformed\\jetified-checkout-1.6.22\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "38",
-                        "endOffsets": "89"
-                    },
-                    "to": {
-                        "startLines": "92",
-                        "startColumns": "4",
-                        "startOffsets": "5307",
-                        "endColumns": "38",
-                        "endOffsets": "5341"
-                    }
-                },
-                {
                     "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "1",
@@ -443,6 +426,23 @@
                         "endLines": "6764",
                         "endColumns": "24",
                         "endOffsets": "422066"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\988276d39b6d2a9619eb883f8e17851a\\transformed\\jetified-checkout-1.6.23\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "38",
+                        "endOffsets": "89"
+                    },
+                    "to": {
+                        "startLines": "92",
+                        "startColumns": "4",
+                        "startOffsets": "5307",
+                        "endColumns": "38",
+                        "endOffsets": "5341"
                     }
                 },
                 {

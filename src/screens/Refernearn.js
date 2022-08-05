@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   ImageBackground,
   Dimensions,
+  Share,
 } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icons from 'react-native-vector-icons/AntDesign';
@@ -17,6 +18,25 @@ import {getreferralpoint} from '../../Redux/slices/userSlice';
 import {useSelector, useDispatch} from 'react-redux';
 import {apicaller} from './api';
 const Refernearn = ({navigation}) => {
+  //-------------share---------------//
+  const onShare = async () => {
+    try {
+      const result = await Share.share({
+        message: 'fghjhjhhhhhhhjhjjk',
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      //  alert(error.message);
+    }
+  };
   const referral_ponit = useSelector(getreferralpoint);
   const [referral, setReferral] = useState();
   useEffect(() => {
@@ -97,7 +117,7 @@ const Refernearn = ({navigation}) => {
               <Text style={styles.takeFreeTrialBtnTxt}>Invite Now</Text>
             </TouchableOpacity> */}
 
-            <TouchableOpacity style={styles.btn}>
+            <TouchableOpacity style={styles.btn} onPress={onShare}>
               <Text style={styles.btntext}>Invite Now</Text>
             </TouchableOpacity>
           </View>

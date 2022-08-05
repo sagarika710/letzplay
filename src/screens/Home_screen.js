@@ -54,6 +54,7 @@ const Home = props => {
   const Loca = useSelector(getlocationOf);
   const lat = useSelector(getLat);
   const lang = useSelector(getLang);
+  console.log(lat, lang);
   useEffect(() => {
     //slider
     apicaller('getSlider', null, 'get', null)
@@ -69,14 +70,15 @@ const Home = props => {
   // category
   useEffect(() => {
     apicaller(
-      `get-nearby-category?longitude=72.4997&latitude=22.30`,
-      // `get-nearby-category?longitude=${lat}&latitude=${lang}`,
+      // `get-nearby-category?longitude=72.4997&latitude=22.30`,
+      //   `get-nearby-category?longitude=${lat}&latitude=${lang}`,
+      'get-nearby-category?longitude=85.8343254&latitude=20.3596102',
       null,
       'get',
       null,
     )
       .then(res => {
-        //  console.log('categporylist', res.data);
+        console.log('categporylist', res.data);
         setSports(res.data.sports_catrgory);
       })
       .catch(e => {
@@ -87,8 +89,8 @@ const Home = props => {
   // sports center
   useEffect(() => {
     apicaller(
-      // ` sports-center?longitude=${lat}&latitude=${lang}`
-      'sports-center?longitude=72.4997&latitude=22.30',
+      // ` sports-center?longitude=${lat}&latitude=${lang}`,
+      'sports-center?longitude=85.8343254&latitude=20.3596102',
       null,
       'get',
       `Bearer ${Token}`,
@@ -117,8 +119,6 @@ const Home = props => {
   const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
     if (currentCount === 1) {
       BackHandler.exitApp();
-      subscription.remove();
-      return true;
     }
     backPressHandler();
     return true;

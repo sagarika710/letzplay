@@ -7,6 +7,7 @@ import {
   Dimensions,
   ScrollView,
   Linking,
+  BackHandler,
 } from 'react-native';
 import React, {useState, useRef, useEffect} from 'react';
 import dir from '../assets/img/direction.png';
@@ -14,6 +15,7 @@ import Topbar from '../components/Topbar';
 const windowWidth = Dimensions.get('window').width;
 import {useDispatch, useSelector} from 'react-redux';
 import {
+  getBookingid,
   getDob,
   getEmail,
   getName,
@@ -30,12 +32,13 @@ export default function BookingManage({navigation}) {
   const nameRd = useSelector(getName);
   const phoneRd = useSelector(getUserPhone);
   const sport = useSelector(getSname);
+  const id = useSelector(getBookingid);
   useEffect(() => {
     var axios = require('axios');
 
     var config = {
       method: 'get',
-      url: 'http://15.207.26.74:8000/api/getbookingdetails/62d6fd29b7886948eaff2542',
+      url: `http://15.207.26.74:8000/api/getbookingdetails/${id}`,
       headers: {},
     };
 
@@ -49,6 +52,12 @@ export default function BookingManage({navigation}) {
         console.log(error);
       });
   }, []);
+
+  const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+    navigation.navigate('Tab');
+    return true;
+  });
+
   return (
     <ScrollView
       style={{flex: 1, backgroundColor: 'white'}}
@@ -155,8 +164,8 @@ export default function BookingManage({navigation}) {
                     fontSize: 12,
                     width: windowWidth * 0.65,
                   }}>
-                  {data.sports_center_id.ground_name},{' '}
-                  {data.sports_center_id.address}
+                  {/* {data.sports_center_id.ground_name},{' '}
+                  {data.sports_center_id.address} */}
                 </Text>
               </View>
               <TouchableOpacity
@@ -237,7 +246,7 @@ export default function BookingManage({navigation}) {
               Payment Summary
             </Text>
 
-            {data.services.map(e => {
+            {/* {data.services.map(e => {
               console.log(e);
               return (
                 <View
@@ -264,7 +273,7 @@ export default function BookingManage({navigation}) {
                   </Text>
                 </View>
               );
-            })}
+            })} */}
 
             <View
               style={{
@@ -364,6 +373,7 @@ export default function BookingManage({navigation}) {
           </View>
           <View style={{padding: 10}}>
             <TouchableOpacity
+              onPress={() => navigation.navigate('Home')}
               style={{
                 backgroundColor: '#fac516',
                 borderRadius: 10,
@@ -377,7 +387,7 @@ export default function BookingManage({navigation}) {
                   fontFamily: 'ReadexPro-Bold',
                   fontSize: 14,
                 }}>
-                Manage Order
+                Thank you
               </Text>
             </TouchableOpacity>
           </View>

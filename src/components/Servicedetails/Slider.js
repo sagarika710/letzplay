@@ -19,34 +19,37 @@ const sData = [
 
 export default function Slider(props) {
   const [selected, setSelected] = useState(1);
-  console.log(props.img);
+  console.log('props.img', props.img);
   const mWidth = Dimensions.get('screen').width;
   return (
     <View style={{}}>
-      {props.img.map(i => (
-        <View>
-          {selected == i.id ? (
-            <View>
-              <Image
-                source={i.img}
-                style={{height: 180, width: '100%', borderRadius: 10}}
-                resizeMode="cover"
-              />
-              <Text
-                style={{
-                  position: 'absolute',
-                  color: 'white',
-                  fontWeight: '800',
-                  alignSelf: 'flex-end',
-                  marginTop: 140,
-                  padding: 10,
-                }}>
-                {i.id}/{props.img.length}
-              </Text>
-            </View>
-          ) : null}
-        </View>
-      ))}
+      {props.img.map(i => {
+        console.log('i.img', i.img);
+        return (
+          <View>
+            {selected == i.id ? (
+              <View>
+                <Image
+                  source={{uri: i.img}}
+                  style={{height: 180, width: '100%', borderRadius: 10}}
+                  resizeMode="cover"
+                />
+                <Text
+                  style={{
+                    position: 'absolute',
+                    color: 'white',
+                    fontWeight: '800',
+                    alignSelf: 'flex-end',
+                    marginTop: 140,
+                    padding: 10,
+                  }}>
+                  {i.id}/{props.img.length}
+                </Text>
+              </View>
+            ) : null}
+          </View>
+        );
+      })}
       <View
         style={{
           flexDirection: 'row',

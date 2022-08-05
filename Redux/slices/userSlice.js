@@ -21,6 +21,7 @@ export var UserSlice = createSlice({
     surl: null,
     referralpoint: null,
     service: [],
+    bookingid: null,
   },
   reducers: {
     setPhone: (state, action) => {
@@ -96,6 +97,9 @@ export var UserSlice = createSlice({
       state.latitude = action.payload.latitude;
       state.longitude = action.payload.longitude;
     },
+    setBookingid: (state, action) => {
+      state.bookingid = action.payload;
+    },
     logout: (state, action) => {
       //
       //   alert("From Redux",JSON.stringify(action.payload))
@@ -113,6 +117,7 @@ export var UserSlice = createSlice({
       state.locationOf = null;
       state.sname = null;
       state.surl = null;
+      state.bookingid = null;
     },
   },
 });
@@ -173,6 +178,9 @@ export const getSurl = state => {
 export const getreferralpoint = state => {
   return state.user.referralpoint;
 };
+export const getBookingid = state => {
+  return state.user.bookingid;
+};
 export const {
   setPhone,
   setToken,
@@ -192,5 +200,6 @@ export const {
   setSname,
   setSurl,
   setreferralpoint,
+  setBookingid,
 } = UserSlice.actions;
 export default UserSlice.reducer;

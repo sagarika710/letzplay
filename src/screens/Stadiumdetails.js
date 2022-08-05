@@ -7,6 +7,7 @@ import {
   Image,
   Dimensions,
   ActivityIndicator,
+  BackHandler,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import StadiumdetailsSlider from '../components/StadiumdetailsComp/StadiumdetailsSlider';
@@ -58,8 +59,8 @@ export default function Stadiumdetails({navigation, route}) {
 
     apicaller(`rating?sports_center_id=${id}`, null, 'get', `Bearer ${Token}`)
       .then(res => {
-        console.log('rat', JSON.stringify(res.data.rating));
-        setRating(res.data.rating);
+        console.log('rat', JSON.stringify(res.data));
+        setRating(res.data);
       })
       .catch(e => {
         console.log(e.value);
@@ -83,6 +84,11 @@ export default function Stadiumdetails({navigation, route}) {
       });
   }, []);
   console.log('click', click ? 'true' : 'false');
+
+  const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+    navigation.navigate('Tab');
+    return true;
+  });
   return (
     <>
       <View style={{flex: 1, backgroundColor: 'white'}}>

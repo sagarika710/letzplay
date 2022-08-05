@@ -7,12 +7,51 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
+import {useSelector, useDispatch} from 'react-redux';
+import {
+  setName,
+  setEmail,
+  setDOB,
+  setPhone,
+  getToken,
+  setId,
+  setreferralpoint,
+  getSportid,
+  getId,
+} from '../../Redux/slices/userSlice';
+import Topbar from '../components/Topbar';
 import {apicaller} from './api';
 export default function Question() {
   const [value, setValue] = React.useState(null);
+  const sid = useSelector(getSportid);
+  const Uid = useSelector(getId);
+  function Submit() {
+    var data = JSON.stringify({
+      question: value,
+      sports_center_id: sid,
+      user_id: Uid,
+    });
+    apicaller(`ask-question`, data, 'post', null)
+      .then(res => {
+        console.log('center', res.data);
+      })
+      .catch(e => {
+        console.log(e.value);
+      });
+  }
+  console.log(value);
   return (
     <View style={styles.container}>
-      <View>
+      <View
+        style={{
+          position: 'absolute',
+          zIndex: 999,
+          backgroundColor: 'transparent',
+          padding: 10,
+        }}>
+        <Topbar backButtonPreesed={() => navigation.goBack()} />
+      </View>
+      <View style={{marginTop: 40}}>
         <Text style={styles.paragraph}>Type your question</Text>
         <View style={styles.textAreaContainer}>
           <TextInput
@@ -31,25 +70,7 @@ export default function Question() {
       <TouchableOpacity
         style={styles.btn}
         onPress={() => {
-          apicaller(
-            'thirdparty/notify',
-            {
-              type: 'email',
-              recipient: 'shiv999d@gmail.com',
-              subject: 'Test EMAIL',
-              htmlBody: 'Hi this is tite <h1><b>TEST BODY</b></h1>' + value,
-            },
-            'post',
-          )
-            .then(response => {
-              console.log(response);
-              //    Alert.alert('Notification ', response.data.data.message);
-              //@sagarika Please navigate back to details screen after this
-            })
-            .catch(e => {
-              console.log(e);
-              Alert.alert('Please try again');
-            });
+          Submit();
         }}>
         <Text style={styles.btntext}> Submit</Text>
       </TouchableOpacity>

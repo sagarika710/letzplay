@@ -4,7 +4,13 @@ import Stadiumlistcomp from '../components/StadiumlistComp/Stadiumlistcomp';
 import {apicaller} from './api';
 import {useSelector} from 'react-redux';
 
-import {getToken, getlocationOf, getId} from '../../Redux/slices/userSlice';
+import {
+  getToken,
+  getlocationOf,
+  getId,
+  getLat,
+  getLang,
+} from '../../Redux/slices/userSlice';
 
 export default function Stadiumlist({}) {
   const id = useSelector(getId);
@@ -12,6 +18,8 @@ export default function Stadiumlist({}) {
   const [load, setLoad] = useState(false);
   const [Sports, setSports] = useState();
   const [SportsCenterall, setSportsCenter] = useState();
+  const lat = useSelector(getLat);
+  const long = useSelector(getLang);
   const Token = useSelector(getToken);
   // const [WishList, setWishList] = useState([]);
   // const [push, setPush] = useState([]);
@@ -67,7 +75,8 @@ export default function Stadiumlist({}) {
   // sports center list
   useEffect(() => {
     apicaller(
-      'sports-center?longitude=72.4997&latitude=22.30',
+      //  'sports-center?longitude=72.4997&latitude=22.30',
+      `sports-center?longitude=${long}&latitude=${lat}`,
       null,
       'get',
       `Bearer ${Token}`,

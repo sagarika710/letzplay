@@ -68,7 +68,8 @@ export default function SlotScreen({navigation}) {
   //get slot
   useEffect(() => {
     dispatch(setSlottime(false));
-    apicaller('getslots?service_id=62b9ce6a43bae334572757f7', null, 'get', null)
+    apicaller(`getslots?service_id=${services}`, null, 'get', null)
+      // apicaller(`getslots?service_id=62b9ce6a43bae334572757f7`, null, 'get', null)
       .then(res => {
         console.log('slot', res.data);
         setSlots(res.data);

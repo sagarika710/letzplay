@@ -83,13 +83,11 @@ export default function Membership({navigation}) {
                 borderRadius: 10,
                 marginVertical: 10,
               }}
-              onPress={() =>
-                navigation.navigate('Silverpkg', item.plan_pricing)
-              }>
+              onPress={() => navigation.navigate('Silverpkg', item)}>
               <Image
                 style={styles.card}
                 source={
-                  item.plan_name === 'Gold Member1'
+                  item.plan_name == 'Gold Member'
                     ? require('../assets/img/Sports/goldcard.png')
                     : require('../assets/img/Sports/silvercard.png')
                 }

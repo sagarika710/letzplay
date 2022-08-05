@@ -58,6 +58,7 @@ import Faqs from './src/screens/Faqs';
 import Termcondition from './src/screens/Term&condition';
 import Privacypolicy from './src/screens/Privacypolicy';
 import Referhistory from './src/screens/Referhistory';
+import Membership_slot from './src/screens/Membership_slot';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {Provider} from 'react-redux';
 import Store from './Redux/store';
@@ -92,6 +93,16 @@ const App = () => {
                 ),
               }}
             /> */}
+
+            <Stack.Screen
+              name="Membership_slot"
+              component={Membership_slot}
+              options={{
+                headerTitle: props => (
+                  <Headert {...props} title={'Membership_slot'} />
+                ),
+              }}
+            />
             <Stack.Screen
               name="Privacypolicy"
               component={Privacypolicy}

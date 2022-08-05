@@ -6,6 +6,7 @@ import {
   ScrollView,
   TouchableOpacity,
   ActivityIndicator,
+  Dimensions,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import Topbar from '../components/Topbar';
@@ -16,11 +17,12 @@ import SubHeadings from '../components/StadiumdetailsComp/SubHeadings';
 import Ourfacilities from '../components/StadiumdetailsComp/Ourfacilities';
 import HealthandHygine from '../components/StadiumdetailsComp/HealthandHygine';
 import {apicaller} from './api';
-import {getToken} from '../../Redux/slices/userSlice';
+import {getSportid, getToken} from '../../Redux/slices/userSlice';
 import {useSelector, useDispatch} from 'react-redux';
 
 export default function Servicedetails({navigation, route}) {
   const Token = useSelector(getToken);
+  const sid = useSelector(getSportid);
   const [selected, setSelected] = useState(false);
   const id = route.params;
   const [hygin, setHygin] = useState([]);
@@ -31,7 +33,7 @@ export default function Servicedetails({navigation, route}) {
   useEffect(() => {
     apicaller(`services/${id}`, null, 'get', `Bearer ${Token}`)
       .then(res => {
-        console.log('qwertyuiop', res.data);
+        console.log('qwertyuiop', res.data.service_image);
         setData(res.data);
       })
       .catch(e => {
@@ -39,12 +41,7 @@ export default function Servicedetails({navigation, route}) {
       });
 
     // apicaller(`getfacilitiesbysportscentre/${id}`, null, 'get', null)
-    apicaller(
-      `getfacilitiesbysportscentre/62ba77721c471edca5b0ad39`,
-      null,
-      'get',
-      null,
-    )
+    apicaller(`getfacilitiesbysportscentre/${sid}`, null, 'get', null)
       .then(res => {
         console.log('facility', res.data.facilities);
         setfacility(res.data.facilities);
@@ -53,12 +50,7 @@ export default function Servicedetails({navigation, route}) {
         console.log(e.value);
       });
 
-    apicaller(
-      `hygine?sports_center_id=62ba77721c471edca5b0ad39`,
-      null,
-      'get',
-      `Bearer ${Token}`,
-    )
+    apicaller(`hygine?sports_center_id=${sid}`, null, 'get', `Bearer ${Token}`)
       .then(res => {
         console.log('hygin', JSON.stringify(res.data.result));
         setHygin(res.data.result);
@@ -77,11 +69,21 @@ export default function Servicedetails({navigation, route}) {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={{marginTop: 20}}>
             {data.service_image && (
+              <Image
+                source={{uri: data.service_image[0].img}}
+                style={{
+                  height: 300,
+                  borderRadius: 20,
+                  width: Dimensions.get('window').width - 20,
+                }}
+              />
+            )}
+            {/* {data.service_image && (
               <Slider
                 openFullView={() => navigation.navigate('Sliderimageview')}
                 img={data.service_image}
               />
-            )}
+            )} */}
           </View>
           <View
             style={{

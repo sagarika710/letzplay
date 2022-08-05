@@ -18,6 +18,8 @@ import OurCoaches from './OurCoaches';
 import {apicaller} from '../../screens/api';
 
 import {
+  getSportid,
+  getStadid,
   getToken,
   setSname,
   setSportid,
@@ -69,10 +71,13 @@ export default function SportsAvailabeHere(props) {
   const dispatch = useDispatch();
   const [data, setData] = useState('');
   const Token = useSelector(getToken);
+  const Sports = useSelector(getStadid);
+  const cat = useSelector(getSportid);
   useEffect(() => {
     dispatch(setSportid(false));
     apicaller(
-      `get-category-by-sports-center/62bbcb290f31d4e3cce6c553`,
+      // `get-category-by-sports-center/62bbcb290f31d4e3cce6c553`,
+      `get-category-by-sports-center/62ec1b904af75d5c52d1caa5`,
       null,
       'get',
       null,
@@ -88,7 +93,9 @@ export default function SportsAvailabeHere(props) {
 
   function coach(id, sid) {
     apicaller(
-      `services-by-sport-center-id?sports_center_id=62bbcb290f31d4e3cce6c553&sports_category_id=62b564a927d097a67fcb9936`,
+      //  `services-by-sport-center-id?sports_center_id=62bbcb290f31d4e3cce6c553&sports_category_id=62b564a927d097a67fcb9936`,
+      `services-by-sport-center-id?sports_center_id=${sports}&sports_category_id=${cat}`,
+
       null,
       'get',
       `Bearer ${Token}`,

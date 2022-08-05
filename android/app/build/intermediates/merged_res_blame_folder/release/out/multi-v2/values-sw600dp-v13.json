@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\3de68d48aec9fd43107137611e9c8317\\transformed\\jetified-checkout-1.6.22\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\988276d39b6d2a9619eb883f8e17851a\\transformed\\jetified-checkout-1.6.23\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

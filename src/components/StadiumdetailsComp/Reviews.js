@@ -4,11 +4,12 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Divider} from 'react-native-paper';
 
 export default function Reviews(props) {
+  console.log(props);
   return (
     <View style={{marginTop: 10}}>
       <View style={{flexDirection: 'row'}}>
         <Icon name="account-circle" size={35} color="#0003c1" />
-        {props.from_user && (
+        {props.data.from_user && (
           <>
             <Text
               style={{
@@ -19,7 +20,7 @@ export default function Reviews(props) {
                 paddingLeft: 20,
                 padding: 5,
               }}>
-              {props.from_user.name}
+              {props.data.from_user.name}
             </Text>
           </>
         )}
@@ -34,7 +35,7 @@ export default function Reviews(props) {
           textAlign: 'justify',
           marginTop: 10,
         }}>
-        {props.review}
+        {props.data.review}
       </Text>
 
       <View

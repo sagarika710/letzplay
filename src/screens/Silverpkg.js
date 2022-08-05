@@ -11,20 +11,36 @@ import {
   TouchableOpacity,
   Button,
 } from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  getBookingid,
+  getDob,
+  getEmail,
+  getId,
+  getName,
+  getSname,
+  getToken,
+  getUserPhone,
+  logout,
+} from '../../Redux/slices/userSlice';
+import {apicaller} from './api';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export default Goldmembership = ({route}) => {
+export default Goldmembership = ({route, navigation}) => {
   const [showSports, setSport] = useState(0);
   const [showTime, setTime] = useState(0);
   const [sports, selectedSports] = useState('');
   const [selectedTime, setselectedTime] = useState('');
   const [selectedPackage, setselectedPackage] = useState('');
   const [activateButton, setactivateButton] = useState(false);
+  const [selectditem, setSelectditem] = useState();
   const price = route.params;
 
   console.log('bggggggggggg', price);
-
+  const [data, setData] = useState();
+  const Token = useSelector(getToken);
+  const Id = useSelector(getId);
   const call = () => {
     if (selectedTime !== '' && selectedPackage != '' && sports !== '') {
       setactivateButton(true);
@@ -36,6 +52,27 @@ export default Goldmembership = ({route}) => {
     {name: '6 Months'},
     {name: '3 Months'},
   ];
+  function payme() {
+    var data = JSON.stringify({
+      user_id: Id,
+      price: selectditem.price,
+      gst: selectditem.price * 0.18,
+      total_amount: selectditem.price + selectditem.price * 0.18,
+      booking_id: price._id,
+      membership_type: price.plan_name == 'Gold Member' ? 'gold' : 'silver',
+      plan_id: selectditem._id,
+    });
+    console.log('saggtgtgttghgyfyyftykyt', data);
+    apicaller('get-bokingid', data, 'post', `Bearer ${Token}`)
+      .then(res => {
+        console.log('kjhgfgkilhgufyctu', res.data);
+        setData(res.data);
+        navigation.navigate('Bookingdetails', res.data);
+      })
+      .catch(e => {
+        console.log(e.value);
+      });
+  }
   return (
     <View style={styles.container}>
       <Text
@@ -50,12 +87,13 @@ export default Goldmembership = ({route}) => {
         Please Choose Package
       </Text>
       <ScrollView>
-        {price.map((item, key) => {
+        {price.plan_pricing.map((item, key) => {
           return (
             <TouchableOpacity
               key={key}
               onPress={() => {
                 setselectedPackage(item.duration), call();
+                setSelectditem(item);
               }}
               style={{
                 paddingTop: 20,
@@ -87,7 +125,7 @@ export default Goldmembership = ({route}) => {
       </ScrollView>
       <View style={{padding: 10}}>
         <TouchableOpacity
-          onPress={() => alert('payment page then home')}
+          onPress={() => payme()}
           style={{
             backgroundColor: '#fac516',
             borderRadius: 10,

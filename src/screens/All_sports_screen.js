@@ -8,15 +8,19 @@ import {
   TouchableOpacity,
   ActivityIndicator,
 } from 'react-native';
+import {getLang, getLat} from '../../Redux/slices/userSlice';
 import Color from '../components/Colors';
 import {apicaller} from './api';
-
+import {useSelector, useDispatch} from 'react-redux';
 const Sports = ({navigation}) => {
   const [sportsCategories, setsportsCategories] = useState(null);
   const [Sports, setSports] = useState();
+  const lat = useSelector(getLat);
+  const lang = useSelector(getLang);
   useEffect(() => {
     apicaller(
-      'get-nearby-category?longitude=72.4997&latitude=22.30',
+      `get-nearby-category?longitude=${lang}&latitude=${lat}`,
+      //`get-nearby-category?longitude=72.4997&latitude=22.30`,
       null,
       'get',
       null,

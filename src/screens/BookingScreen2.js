@@ -79,6 +79,7 @@ export default function BookingScreen2({navigation}) {
   const [doberr, setDoberr] = useState(false);
   const [errn, setErrn] = useState(false);
   const [emailerror, setEmailerror] = useState();
+  const [othersSelected, setOthersSelected] = useState(false);
   const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
   console.log('okm', services);
   useEffect(() => {
@@ -109,7 +110,6 @@ export default function BookingScreen2({navigation}) {
       booking_time: new Date().toLocaleTimeString(),
       slot_id: slot_id,
       price: price.price_per_hr,
-      gst: price.price_per_hr * 0.18,
       other_charges: 0,
     });
 
@@ -117,6 +117,7 @@ export default function BookingScreen2({navigation}) {
       .then(function (response) {
         console.log('addbooking', JSON.stringify(response.data._id));
         setIds(response.data._id);
+        console.log('Booking Response', response.data);
 
         call();
       })
@@ -141,6 +142,7 @@ export default function BookingScreen2({navigation}) {
       });
   }
   function razor(opid) {
+    console.log('opid', opid);
     var options = {
       description: '',
       image: 'https://i.imgur.com/3g7nmJC.png',
@@ -191,13 +193,14 @@ export default function BookingScreen2({navigation}) {
         <TouchableOpacity
           onPress={() => {
             setIsSelf(true);
+            namedata.length = 0;
           }}
           style={{
             height: 64,
             marginHorizontal: 10,
             flexDirection: 'row',
-            borderWidth: 1,
-            borderColor: isSelf ? '#FAC516' : '#E7E7E7',
+            borderWidth: isSelf ? 2 : 1,
+            borderColor: isSelf ? 'orange' : '#E7E7E7',
             padding: 10,
             borderRadius: 10,
           }}>
@@ -254,8 +257,8 @@ export default function BookingScreen2({navigation}) {
             height: 64,
             marginHorizontal: 10,
             flexDirection: 'row',
-            borderWidth: 1,
-            borderColor: isSelf ? '#E7E7E7' : '#FAC516',
+            borderWidth: isSelf ? 1 : 2,
+            borderColor: isSelf ? '#E7E7E7' : 'orange',
             padding: 10,
             borderRadius: 10,
             marginVertical: 10,
@@ -285,148 +288,159 @@ export default function BookingScreen2({navigation}) {
           </Text>
         </TouchableOpacity>
       </View>
-      <View
-        style={{
-          display: namedata.length > 0 ? 'flex' : 'none',
-          marginHorizontal: 10,
-          height: 100,
-          justifyContent: 'space-between',
-          marginTop: 20,
-        }}>
-        <Text
+      <ScrollView>
+        <View
           style={{
-            fontSize: 14,
-            color: '#222',
-            fontFamily: 'ReadexPro-Bold',
-            letterSpacing: 0.5,
+            display: namedata.length > 0 ? 'flex' : 'none',
+            marginHorizontal: 10,
+            height: 100,
+            justifyContent: 'space-between',
+            marginTop: 20,
           }}>
-          Members
-        </Text>
-        {namedata &&
-          namedata.map(qwe => (
-            <>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                }}>
-                <Text
-                  style={{
-                    fontSize: 12,
-                    color: '#222',
-                    fontFamily: 'ReadexPro-Medium',
-                  }}>
-                  {qwe.other_user_name}
-                </Text>
-
-                <Text
-                  style={{
-                    fontSize: 12,
-                    color: '#222',
-                    fontFamily: 'ReadexPro-Medium',
-                  }}>
-                  {qwe.other_user_phone}
-                </Text>
-                <Text
-                  style={{
-                    fontSize: 12,
-                    color: '#222',
-                    fontFamily: 'ReadexPro-Medium',
-                  }}>
-                  {qwe.other_user_dob}
-                </Text>
-                <TouchableOpacity
-                  onPress={() => {
-                    //delet(qwe);
-                    const index = namedata.indexOf(qwe);
-
-                    if (index > -1) {
-                      namedata.splice(index, 1); // 2nd parameter means remove one item only
-                      console.log('namedata', namedata);
-                      setNamedata(namedata);
-                      //  alert(da.service_name + ' removed');
-                    }
-                  }}>
-                  <Text style={{color: 'red', marginLeft: 6}}>
-                    <Icon name="trash" size={15} />
-                  </Text>
-                  <Text style={{color: 'red', fontSize: 7}}>Remove</Text>
-                </TouchableOpacity>
-              </View>
-            </>
-          ))}
-      </View>
-
-      <View
-        style={{
-          marginHorizontal: 10,
-          marginVertical: 30,
-          flexDirection: 'row',
-
-          borderBottomColor: '#DFDDDD',
-          borderBottomWidth: 1,
-          paddingBottom: 15,
-
-          alignItems: 'center',
-        }}>
-        <Text
-          style={{
-            fontFamily: 'ReadexPro-Bold',
-            letterSpacing: 1,
-            fontSize: 16,
-            color: '#292a2e',
-          }}>
-          Add More Member
-        </Text>
-        <TouchableOpacity
-          onPress={() => {
-            refRBSheet.current.open();
-          }}>
-          <Text style={{color: '#0003C1', marginLeft: 10}}>
-            <Icon name="plus-square-o" size={15} />
-          </Text>
-        </TouchableOpacity>
-      </View>
-
-      <View
-        style={{
-          marginHorizontal: 10,
-          borderBottomColor: '#DFDDDD',
-          borderBottomWidth: 1,
-          paddingBottom: 15,
-        }}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <Text
             style={{
-              fontFamily: 'ReadexPro-Bold',
-              letterSpacing: 1,
               fontSize: 14,
-              color: '#222222',
-              marginVertical: 5,
+              color: '#222',
+              fontFamily: 'ReadexPro-Bold',
+              letterSpacing: 0.5,
             }}>
-            Booking Details
+            Members
           </Text>
-          <TouchableOpacity
+          {namedata &&
+            namedata.map(qwe => (
+              <>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <Text
+                    style={{
+                      fontSize: 12,
+                      color: '#222',
+                      fontFamily: 'ReadexPro-Medium',
+                    }}>
+                    {qwe.other_user_name}
+                  </Text>
+
+                  <Text
+                    style={{
+                      fontSize: 12,
+                      color: '#222',
+                      fontFamily: 'ReadexPro-Medium',
+                    }}>
+                    {qwe.other_user_phone}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 12,
+                      color: '#222',
+                      fontFamily: 'ReadexPro-Medium',
+                    }}>
+                    {qwe.other_user_dob}
+                  </Text>
+                  <TouchableOpacity
+                    onPress={() => {
+                      //delet(qwe);
+                      const index = namedata.indexOf(qwe);
+
+                      if (index > -1) {
+                        namedata.splice(index, 1); // 2nd parameter means remove one item only
+                        console.log('namedata', namedata);
+                        setNamedata(namedata);
+                        //  alert(da.service_name + ' removed');
+                      }
+                    }}>
+                    <Text style={{color: 'red', marginLeft: 6}}>
+                      <Icon name="trash" size={15} />
+                    </Text>
+                    <Text style={{color: 'red', fontSize: 7}}>Remove</Text>
+                  </TouchableOpacity>
+                </View>
+              </>
+            ))}
+        </View>
+        {isSelf ? null : (
+          <View
             style={{
-              padding: 5,
+              marginHorizontal: 10,
+              marginVertical: 30,
+              flexDirection: 'row',
+
+              borderBottomColor: '#DFDDDD',
+              borderBottomWidth: 1,
+              paddingBottom: 15,
 
               alignItems: 'center',
-            }}
-            onPress={() =>
-              Linking.openURL(`geo:0,0?q=${data.latitude},${data.longitude}`)
-            }>
-            <Iconm name="directions" size={15} />
+            }}>
             <Text
               style={{
-                fontSize: 8,
                 fontFamily: 'ReadexPro-Bold',
+                letterSpacing: 1,
+                fontSize: 16,
+                color: '#292a2e',
               }}>
-              Get Direction
+              Add More Member
             </Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          {data && (
+            <TouchableOpacity
+              onPress={() => {
+                refRBSheet.current.open();
+              }}>
+              <Text style={{color: '#0003C1', marginLeft: 10}}>
+                <Icon name="plus-square-o" size={15} />
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
+        <View
+          style={{
+            marginHorizontal: 10,
+            borderBottomColor: '#DFDDDD',
+            borderBottomWidth: 1,
+            paddingBottom: 15,
+          }}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text
+              style={{
+                fontFamily: 'ReadexPro-Bold',
+                letterSpacing: 1,
+                fontSize: 14,
+                color: '#222222',
+                marginVertical: 5,
+              }}>
+              Booking Details
+            </Text>
+            <TouchableOpacity
+              style={{
+                padding: 5,
+
+                alignItems: 'center',
+              }}
+              onPress={() =>
+                Linking.openURL(`geo:0,0?q=${data.latitude},${data.longitude}`)
+              }>
+              <Iconm name="directions" size={15} />
+              <Text
+                style={{
+                  fontSize: 8,
+                  fontFamily: 'ReadexPro-Bold',
+                }}>
+                Get Direction
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View>
+            {data && (
+              <Text
+                style={{
+                  fontFamily: 'ReadexPro-Medium',
+                  letterSpacing: 0.5,
+                  fontSize: 12,
+                  color: '#717171',
+                }}>
+                {data.ground_name}, {data.address}
+              </Text>
+            )}
             <Text
               style={{
                 fontFamily: 'ReadexPro-Medium',
@@ -434,116 +448,158 @@ export default function BookingScreen2({navigation}) {
                 fontSize: 12,
                 color: '#717171',
               }}>
-              {data.ground_name}, {data.address}
+              <Text>Sports: </Text>
             </Text>
-          )}
+            <Text
+              style={{
+                fontFamily: 'ReadexPro-Medium',
+                letterSpacing: 0.5,
+                fontSize: 12,
+                color: '#717171',
+              }}>
+              Slot Booked: {da} {tim}
+            </Text>
+          </View>
+        </View>
+        <View
+          style={{
+            marginHorizontal: 10,
+          }}>
           <Text
             style={{
-              fontFamily: 'ReadexPro-Medium',
-              letterSpacing: 0.5,
-              fontSize: 12,
-              color: '#717171',
+              fontFamily: 'ReadexPro-Bold',
+              letterSpacing: 1,
+              fontSize: 14,
+              color: '#222222',
+              marginVertical: 20,
             }}>
-            <Text>Sports: </Text>
-          </Text>
-          <Text
-            style={{
-              fontFamily: 'ReadexPro-Medium',
-              letterSpacing: 0.5,
-              fontSize: 12,
-              color: '#717171',
-            }}>
-            Slot Booked: {da} {tim}
+            Price Details
           </Text>
         </View>
-      </View>
-
-      <View
-        style={{
-          marginHorizontal: 10,
-        }}>
-        <Text
+        <View
           style={{
-            fontFamily: 'ReadexPro-Bold',
-            letterSpacing: 1,
-            fontSize: 14,
-            color: '#222222',
-            marginVertical: 20,
-          }}>
-          Price Details
-        </Text>
-      </View>
+            marginHorizontal: 10,
 
+            borderBottomColor: '#DFDDDD',
+            borderBottomWidth: 1,
+            paddingBottom: 15,
+          }}>
+          {services.map(serviceDetail => {
+            return (
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                }}>
+                <Text
+                  style={{
+                    fontFamily: 'ReadexPro-Medium',
+                    letterSpacing: 0.5,
+                    fontSize: 14,
+                    color: '#717171',
+                  }}>
+                  {serviceDetail.service_name}
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: 'ReadexPro-Medium',
+                    letterSpacing: 0.5,
+                    fontSize: 14,
+                    color: '#717171',
+                  }}>
+                  ₹ {serviceDetail.price_per_hr}
+                </Text>
+              </View>
+            );
+          })}
+
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+            }}>
+            <Text
+              style={{
+                fontFamily: 'ReadexPro-Medium',
+                letterSpacing: 0.5,
+                fontSize: 14,
+                color: '#717171',
+              }}>
+              GST @18%
+            </Text>
+            <Text
+              style={{
+                fontFamily: 'ReadexPro-Medium',
+                letterSpacing: 0.5,
+                fontSize: 14,
+                color: '#717171',
+              }}>
+              ₹ {price.price_per_hr * 0.18}
+            </Text>
+          </View>
+        </View>
+      </ScrollView>
       <View
         style={{
           marginHorizontal: 10,
-
+          marginBottom: 70,
           borderBottomColor: '#DFDDDD',
           borderBottomWidth: 1,
-          paddingBottom: 15,
         }}>
-        {services.map(serviceDetail => {
-          return (
+        {namedata ? (
+          <>
             <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
+                marginTop: 10,
               }}>
-              <Text
-                style={{
-                  fontFamily: 'ReadexPro-Medium',
-                  letterSpacing: 0.5,
-                  fontSize: 14,
-                  color: '#717171',
-                }}>
-                {serviceDetail.service_name}
-              </Text>
-              <Text
-                style={{
-                  fontFamily: 'ReadexPro-Medium',
-                  letterSpacing: 0.5,
-                  fontSize: 14,
-                  color: '#717171',
-                }}>
-                ₹ {serviceDetail.price_per_hr}
-              </Text>
+              {namedata && namedata.length > 0 ? (
+                <Text
+                  style={{
+                    fontFamily: 'ReadexPro-Medium',
+                    letterSpacing: 0.5,
+                    fontSize: 14,
+                    color: '#717171',
+                  }}>
+                  Player X {namedata.length}
+                </Text>
+              ) : (
+                <Text
+                  style={{
+                    fontFamily: 'ReadexPro-Medium',
+                    letterSpacing: 0.5,
+                    fontSize: 14,
+                    color: '#717171',
+                  }}>
+                  Player X 1
+                </Text>
+              )}
+              {namedata && namedata.length > 0 ? (
+                <Text
+                  style={{
+                    fontFamily: 'ReadexPro-Medium',
+                    letterSpacing: 0.5,
+                    fontSize: 14,
+                    color: '#717171',
+                  }}>
+                  ₹{' '}
+                  {(price.price_per_hr + price.price_per_hr * 0.18) *
+                    namedata.length}{' '}
+                </Text>
+              ) : (
+                <Text
+                  style={{
+                    fontFamily: 'ReadexPro-Medium',
+                    letterSpacing: 0.5,
+                    fontSize: 14,
+                    color: '#717171',
+                  }}>
+                  ₹ {(price.price_per_hr + price.price_per_hr * 0.18) * 1}{' '}
+                </Text>
+              )}
             </View>
-          );
-        })}
-
-        <View
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}>
-          <Text
-            style={{
-              fontFamily: 'ReadexPro-Medium',
-              letterSpacing: 0.5,
-              fontSize: 14,
-              color: '#717171',
-            }}>
-            GST{' '}
-          </Text>
-          <Text
-            style={{
-              fontFamily: 'ReadexPro-Medium',
-              letterSpacing: 0.5,
-              fontSize: 14,
-              color: '#717171',
-            }}>
-            ₹ {price.price_per_hr * 0.18}
-          </Text>
-        </View>
-      </View>
-
-      <View
-        style={{
-          marginHorizontal: 10,
-        }}>
-        {namedata ? (
-          <>
             <View
               style={{
                 flexDirection: 'row',
@@ -557,19 +613,30 @@ export default function BookingScreen2({navigation}) {
                   fontSize: 14,
                   color: '#717171',
                 }}>
-                Player X {namedata.length + 1}
+                Referal Points
               </Text>
-              <Text
-                style={{
-                  fontFamily: 'ReadexPro-Medium',
-                  letterSpacing: 0.5,
-                  fontSize: 14,
-                  color: '#717171',
-                }}>
-                ₹{' '}
-                {(price.price_per_hr + price.price_per_hr * 0.18) *
-                  (namedata.length + 1)}{' '}
-              </Text>
+              {namedata && namedata.length > 0 ? (
+                <Text
+                  style={{
+                    fontFamily: 'ReadexPro-Medium',
+                    letterSpacing: 0.5,
+                    fontSize: 14,
+                    color: '#717171',
+                  }}>
+                  ₹ {Math.round(price.price_per_hr * 0.1 * namedata.length)}
+                  {'.00'}
+                </Text>
+              ) : (
+                <Text
+                  style={{
+                    fontFamily: 'ReadexPro-Medium',
+                    letterSpacing: 0.5,
+                    fontSize: 14,
+                    color: '#717171',
+                  }}>
+                  ₹ {price.price_per_hr * 0.1 * 1}{' '}
+                </Text>
+              )}
             </View>
             <View
               style={{
@@ -586,17 +653,39 @@ export default function BookingScreen2({navigation}) {
                 }}>
                 Grand Total
               </Text>
-              <Text
-                style={{
-                  fontFamily: 'ReadexPro-Medium',
-                  letterSpacing: 0.5,
-                  fontSize: 14,
-                  color: '#717171',
-                }}>
-                ₹{' '}
-                {(price.price_per_hr + price.price_per_hr * 0.18) *
-                  (namedata.length + 1)}{' '}
-              </Text>
+              {namedata && namedata.length > 0 ? (
+                <Text
+                  style={{
+                    fontFamily: 'ReadexPro-Medium',
+                    letterSpacing: 0.5,
+                    fontSize: 14,
+                    color: '#717171',
+                  }}>
+                  ₹{' '}
+                  {Math.round(
+                    (price.price_per_hr + price.price_per_hr * 0.18) *
+                      namedata.length -
+                      price.price_per_hr * 0.1 * namedata.length,
+                  )}
+                  {'.00'}
+                </Text>
+              ) : (
+                <Text
+                  style={{
+                    fontFamily: 'ReadexPro-Medium',
+                    letterSpacing: 0.5,
+                    fontSize: 14,
+                    color: '#717171',
+                  }}>
+                  ₹{' '}
+                  {Math.round(
+                    price.price_per_hr +
+                      price.price_per_hr * 0.18 -
+                      price.price_per_hr * 0.1,
+                  )}
+                  {'.00'}
+                </Text>
+              )}
             </View>
           </>
         ) : (
@@ -657,10 +746,10 @@ export default function BookingScreen2({navigation}) {
       {/* BottomSheet */}
       <RBSheet
         ref={refRBSheet}
-        closeOnDragDown={true}
-        closeOnPressBack={true}
-        height={430}
-        closeOnPressMask={true}
+        height={480}
+        closeOnPressMask={false}
+        closeOnDragDown={false}
+        closeOnPressBack={false}
         customStyles={{
           wrapper: {
             backgroundColor: '#2222229a',
@@ -747,21 +836,22 @@ export default function BookingScreen2({navigation}) {
                   setErrn(false);
                   if (reg.test(extraEmail)) {
                     setEmailerror(false);
-                    if (show.getFullYear() < 2018 && date != '0') {
-                      setDoberr(false);
-                      let newExtras = {
-                        other_user_name: extraName,
-                        other_user_email: extraEmail,
-                        other_user_phone: extraPhone,
-                        other_user_dob: show,
-                      };
-                      setExtraPhonetes('bfrtb');
-                      namedata.push(newExtras);
-                      refRBSheet.current.close();
-                    } else {
-                      setDoberr(true);
-                    }
-                  } else {
+                    // if (show.getFullYear() < 2018 && date != '0') {
+                    setDoberr(false);
+                    let newExtras = {
+                      other_user_name: extraName,
+                      other_user_email: extraEmail,
+                      other_user_phone: extraPhone,
+                      other_user_dob: show,
+                    };
+                    setExtraPhonetes('bfrtb');
+                    namedata.push(newExtras);
+                    refRBSheet.current.close();
+                    // } else {
+                    //   setDoberr(true);
+                  }
+                  // }
+                  else {
                     setEmailerror(true);
                   }
                 } else {
@@ -769,6 +859,22 @@ export default function BookingScreen2({navigation}) {
                 }
               }}>
               <Text style={styles.btntext}>Add Member</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                refRBSheet.current.close();
+                setIsSelf(true);
+              }}
+              style={[styles.btn, {backgroundColor: 'red'}]}>
+              <Text
+                style={{
+                  textAlign: 'center',
+                  color: 'white',
+                  fontSize: 14,
+                  fontWeight: '700',
+                }}>
+                Cancel
+              </Text>
             </TouchableOpacity>
           </View>
         </View>

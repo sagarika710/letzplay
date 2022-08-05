@@ -48,12 +48,10 @@ export default function Notification() {
     //   },
     // );
 
-    apicaller('notification/get/62967b69668d1e3a007898d9', null, 'get').then(
-      res => {
-        console.log('rgth', res.data.data);
-        setNotify(res.data.data);
-      },
-    );
+    apicaller(`notification/get/${id}`, null, 'get').then(res => {
+      console.log('rgth', res.data.data);
+      setNotify(res.data.data);
+    });
   }, []);
   return (
     notify && (

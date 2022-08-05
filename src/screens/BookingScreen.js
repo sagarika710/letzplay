@@ -1,418 +1,241 @@
-import React, {useState, useRef} from 'react';
 import {
   View,
   Text,
   StyleSheet,
-  FlatList,
-  Alert,
-  Dimensions,
+  Image,
   TouchableOpacity,
+  Dimensions,
   ScrollView,
+  Linking,
+  BackHandler,
 } from 'react-native';
-
-// packages import
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
-import Icons from 'react-native-vector-icons/dist/FontAwesome5';
-import RBSheet from 'react-native-raw-bottom-sheet';
-
-// components import
-import BookingScreenBottomSheet from '../components/BookingScreenBottomSheet';
-
-// initialisations
+import React, {useState, useRef, useEffect} from 'react';
+import dir from '../assets/img/direction.png';
+import Topbar from '../components/Topbar';
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  getBookingid,
+  getDob,
+  getEmail,
+  getName,
+  getSname,
+  getToken,
+  getUserPhone,
+  logout,
+} from '../../Redux/slices/userSlice';
+// packages import
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import RazorpayCheckout from 'react-native-razorpay';
+import {apicaller} from './api';
+export default function BookingManage({navigation, route}) {
+  const pays = route.params;
+  console.log('routs', pays);
+  const dispatch = useDispatch();
+  const emailRd = useSelector(getEmail);
+  const nameRd = useSelector(getName);
+  const phoneRd = useSelector(getUserPhone);
+  const sport = useSelector(getSname);
+  const id = useSelector(getBookingid);
+  const Token = useSelector(getToken);
+  function getpay() {
+    apicaller(`get-order-id/${pays._id}`, null, 'get', `Bearer ${Token}`)
+      .then(res => {
+        console.log('link', res.data);
+        razor(res.data.order_id);
+      })
+      .catch(e => {
+        console.log(e.value);
+      });
+  }
+  function razor(opid) {
+    var options = {
+      description: '',
+      image: 'https://i.imgur.com/3g7nmJC.png',
+      currency: 'INR',
+      key: 'rzp_test_AAbStcgvQzjGfV',
 
-export default function BookingScreen2({navigation}) {
-  const refRBSheet = useRef();
-
-  const usersInfo = [
-    {id: 1, name: 'Siddheshwar Panda', age: 21, sport: 'Cricket'},
-    {id: 2, name: 'Rameshwar Panda', age: 15, sport: 'Badminton'},
-  ];
-
-  const [isSelf, setIsSelf] = useState(true);
-  const [users, setUsers] = useState(usersInfo);
-
-  const handleDelete = id => {
-    setUsers(users.filter(item => item.id !== id));
-  };
+      order_id: opid, //Replace this with an order_id created using Orders API.
+      prefill: {
+        email: 'sagarika@gmail.com',
+        contact: '7608053853',
+        name: 'sagarika Kumar',
+      },
+      theme: {color: '#53a20e'},
+    };
+    RazorpayCheckout.open(options)
+      .then(data => {
+        // handle success
+        // alert(`Success: ${data.razorpay_payment_id}`);
+        navigation.navigate('BookingSuccess');
+      })
+      .catch(error => {
+        // handle failure
+        alert(`Error: ${error.code} | ${error.description}`);
+      });
+  }
+  const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+    navigation.navigate('Tab');
+    return true;
+  });
 
   return (
-    <View style={styles.container}>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}>
-        <View>
-          <TouchableOpacity
-            onPress={() => {
-              setIsSelf(true);
-            }}
+    <ScrollView
+      style={{flex: 1, backgroundColor: 'white'}}
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}>
+      {pays ? (
+        <>
+          <View
             style={{
-              height: 64,
-              marginHorizontal: 10,
               flexDirection: 'row',
-              borderWidth: 1,
-              borderColor: isSelf ? '#FAC516' : '#E7E7E7',
-              padding: 10,
-              borderRadius: 10,
-            }}>
-            <View
-              style={{
-                backgroundColor: '#FAC516',
-                height: 40,
-                width: 40,
-                borderRadius: 100,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Text style={{color: '#ffffff'}}>
-                <Icons name="user-alt" size={20} />
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              paddingHorizontal: 20,
+              marginBottom: 20,
+            }}></View>
+          <View style={styles.container2}>
+            <View>
+              <Text style={[styles.cl1, {color: '#0003c1'}]}>
+                BOOKING ID :{pays.booking_id}
               </Text>
             </View>
+          </View>
+
+          <View style={styles.container2}>
             <Text
               style={{
                 color: '#222222',
                 fontFamily: 'ReadexPro-Bold',
+                fontSize: 14,
+                marginTop: 10,
                 letterSpacing: 1,
-                marginLeft: 30,
-                alignSelf: 'center',
               }}>
-              Self
+              Payment Summary
             </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              setIsSelf(false);
-              refRBSheet.current.open();
-            }}
-            style={{
-              height: 64,
-              marginHorizontal: 10,
-              flexDirection: 'row',
-              borderWidth: 1,
-              borderColor: isSelf ? '#E7E7E7' : '#FAC516',
-              padding: 10,
-              borderRadius: 10,
-              marginVertical: 10,
-            }}>
+
             <View
-              style={{
-                backgroundColor: '#FAC516',
-                height: 40,
-                width: 40,
-                borderRadius: 100,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Text style={{color: '#ffffff'}}>
-                <Icons name="user-friends" size={20} />
-              </Text>
-            </View>
-            <Text
-              style={{
-                color: '#222222',
-                fontFamily: 'ReadexPro-Bold',
-                letterSpacing: 1,
-                marginLeft: 30,
-                alignSelf: 'center',
-              }}>
-              Otherskjhg
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            display: users.length > 0 ? 'flex' : 'none',
-            marginHorizontal: 10,
-            height: 100,
-            justifyContent: 'space-between',
-            marginTop: 20,
-          }}>
-          <Text
-            style={{
-              fontSize: 14,
-              color: '#222',
-              fontFamily: 'ReadexPro-Bold',
-              letterSpacing: 0.5,
-            }}>
-            Members
-          </Text>
-          {users.map(user => (
-            <View
-              key={user.id}
               style={{
                 flexDirection: 'row',
+                marginTop: 5,
+                justifyContent: 'space-between',
+                borderBottomColor: '#DFDDDD',
+                borderBottomWidth: 1,
+                paddingBottom: 10,
+              }}></View>
+            <View
+              style={{
+                flexDirection: 'row',
+                marginTop: 5,
                 justifyContent: 'space-between',
               }}>
               <Text
                 style={{
-                  fontSize: 12,
-                  color: '#222',
+                  fontSize: 13,
+                  color: '#717171',
                   fontFamily: 'ReadexPro-Medium',
                 }}>
-                {user.name}
+                Total
               </Text>
               <Text
                 style={{
-                  fontSize: 12,
-                  color: '#222',
+                  fontSize: 13,
+                  color: '#717171',
                   fontFamily: 'ReadexPro-Medium',
                 }}>
-                {user.sport}
+                ₹{pays.price}
               </Text>
-              <Text
-                style={{
-                  fontSize: 12,
-                  color: '#222',
-                  fontFamily: 'ReadexPro-Medium',
-                }}>
-                {user.age}
-              </Text>
-              <TouchableOpacity
-                onPress={() => {
-                  handleDelete(user.id);
-                }}>
-                <Text style={{color: 'red', marginLeft: 6}}>
-                  <Icon name="trash" size={15} />
-                </Text>
-                <Text style={{color: 'red', fontSize: 7}}>Remove</Text>
-              </TouchableOpacity>
             </View>
-          ))}
-        </View>
-        <View
-          style={{
-            marginHorizontal: 10,
-            marginVertical: 30,
-            flexDirection: 'row',
-
-            borderBottomColor: '#DFDDDD',
-            borderBottomWidth: 1,
-            paddingBottom: 15,
-
-            alignItems: 'center',
-          }}>
-          <Text
-            style={{
-              fontFamily: 'ReadexPro-Bold',
-              letterSpacing: 1,
-              fontSize: 16,
-              color: '#292a2e',
-            }}>
-            Add More Member
-          </Text>
-          <TouchableOpacity
-            onPress={() => {
-              refRBSheet.current.open();
-            }}>
-            <Text style={{color: '#0003C1', marginLeft: 10}}>
-              <Icon name="plus-square-o" size={15} />
-            </Text>
-          </TouchableOpacity>
-        </View>
-
-        <View
-          style={{
-            marginHorizontal: 10,
-            borderBottomColor: '#DFDDDD',
-            borderBottomWidth: 1,
-            paddingBottom: 15,
-          }}>
-          <Text
-            style={{
-              fontFamily: 'ReadexPro-Bold',
-              letterSpacing: 1,
-              fontSize: 14,
-              color: '#222222',
-              marginVertical: 5,
-            }}>
-            Booking Details
-          </Text>
-
-          <View>
-            <Text
+            <View
               style={{
-                fontFamily: 'ReadexPro-Medium',
-                letterSpacing: 0.5,
-                fontSize: 12,
-                color: '#717171',
+                flexDirection: 'row',
+                marginTop: 5,
+                justifyContent: 'space-between',
               }}>
-              Aarka Sports Center, Near Bigbazar,Patia, INFO City
-              Road,Bhubaneswar,745321
-            </Text>
-            <Text
+              <Text
+                style={{
+                  fontSize: 13,
+                  color: '#717171',
+                  fontFamily: 'ReadexPro-Medium',
+                }}>
+                Gst
+              </Text>
+              <Text
+                style={{
+                  fontSize: 13,
+                  color: '#717171',
+                  fontFamily: 'ReadexPro-Medium',
+                }}>
+                ₹{pays.gst}
+              </Text>
+            </View>
+
+            <View
               style={{
-                fontFamily: 'ReadexPro-Medium',
-                letterSpacing: 0.5,
-                fontSize: 12,
-                color: '#717171',
+                flexDirection: 'row',
+                marginTop: 10,
+                justifyContent: 'space-between',
               }}>
-              Sports: Cricket Slot Booked: 27th Jan 2021, Monday,
-              09.30AM-11.30AM
-            </Text>
+              <Text style={{fontFamily: 'ReadexPro-Bold', fontSize: 13}}>
+                Grand Total
+              </Text>
+              <Text style={{fontFamily: 'ReadexPro-Bold', fontSize: 13}}>
+                ₹ {pays.final_amount}
+              </Text>
+            </View>
           </View>
-        </View>
-
-        <View
-          style={{
-            marginHorizontal: 10,
-          }}>
-          <Text
-            style={{
-              fontFamily: 'ReadexPro-Bold',
-              letterSpacing: 1,
-              fontSize: 14,
-              color: '#222222',
-              marginVertical: 20,
-            }}>
-            Price Details
-          </Text>
-        </View>
-
-        <View
-          style={{
-            marginHorizontal: 10,
-
-            borderBottomColor: '#DFDDDD',
-            borderBottomWidth: 1,
-            paddingBottom: 15,
-          }}>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-            }}>
-            <Text
+          <View style={{padding: 10}}>
+            <TouchableOpacity
+              onPress={() => getpay()}
               style={{
-                fontFamily: 'ReadexPro-Medium',
-                letterSpacing: 0.5,
-                fontSize: 14,
-                color: '#717171',
+                backgroundColor: '#fac516',
+                borderRadius: 10,
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: 43,
               }}>
-              2 x Player{' '}
-            </Text>
-            <Text
-              style={{
-                fontFamily: 'ReadexPro-Medium',
-                letterSpacing: 0.5,
-                fontSize: 14,
-                color: '#717171',
-              }}>
-              ₹ 540.00{' '}
-            </Text>
+              <Text
+                style={{
+                  color: '#fff',
+                  fontFamily: 'ReadexPro-Bold',
+                  fontSize: 14,
+                }}>
+                Procced to pay
+              </Text>
+            </TouchableOpacity>
           </View>
-          <View
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-            }}>
-            <Text
-              style={{
-                fontFamily: 'ReadexPro-Medium',
-                letterSpacing: 0.5,
-                fontSize: 14,
-                color: '#717171',
-              }}>
-              GST{' '}
-            </Text>
-            <Text
-              style={{
-                fontFamily: 'ReadexPro-Medium',
-                letterSpacing: 0.5,
-                fontSize: 14,
-                color: '#717171',
-              }}>
-              ₹ 10.00{' '}
-            </Text>
-          </View>
-        </View>
-
-        <View
-          style={{
-            marginHorizontal: 10,
-          }}>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: 10,
-            }}>
-            <Text
-              style={{
-                fontFamily: 'ReadexPro-Medium',
-                letterSpacing: 0.5,
-                fontSize: 14,
-                color: '#717171',
-              }}>
-              Grand Total
-            </Text>
-            <Text
-              style={{
-                fontFamily: 'ReadexPro-Medium',
-                letterSpacing: 0.5,
-                fontSize: 14,
-                color: '#717171',
-              }}>
-              ₹ 550.00{' '}
-            </Text>
-          </View>
-        </View>
-        <View style={{height: 20}}></View>
-      </ScrollView>
-      <View style={{height: 80}}>
-        <TouchableOpacity
-          style={{
-            backgroundColor: '#fac516',
-            borderRadius: 10,
-            marginHorizontal: 10,
-            height: 43,
-            justifyContent: 'center',
-            position: 'absolute',
-            bottom: 20,
-            width: '95%',
-          }}
-          onPress={() => navigation.navigate('Payment')}>
-          <Text
-            style={{
-              textAlign: 'center',
-              fontFamily: 'ReadexPro-Bold',
-              letterSpacing: 1,
-              color: 'white',
-            }}>
-            Next
-          </Text>
-        </TouchableOpacity>
-      </View>
-      {/* BottomSheet */}
-      <RBSheet
-        ref={refRBSheet}
-        closeOnDragDown={true}
-        closeOnPressBack={true}
-        height={350}
-        closeOnPressMask={true}
-        customStyles={{
-          wrapper: {
-            backgroundColor: '#2222229a',
-          },
-          container: {
-            backgroundColor: '#ffffff',
-            borderTopLeftRadius: 30,
-            borderTopRightRadius: 30,
-          },
-          // draggableIcon: {
-          //     backgroundColor: '#000',
-          // },
-        }}>
-        <BookingScreenBottomSheet />
-      </RBSheet>
-    </View>
+        </>
+      ) : (
+        <Text>no data</Text>
+      )}
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
+  container1: {
+    padding: 10,
+    margin: 10,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#E7E7E7',
+    flexDirection: 'row',
   },
+  bookingid: {color: '#0003C1', fontWeight: '500', fontSize: 15},
+  container2: {
+    padding: 10,
+    margin: 10,
+    marginTop: 0,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#E7E7E7',
+  },
+
+  cl1: {
+    color: '#222222',
+    fontSize: 14,
+    fontFamily: 'ReadexPro-Bold',
+    letterSpacing: 1,
+  },
+  dir: {height: 30, width: 30, marginTop: 20},
 });
