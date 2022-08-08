@@ -22,6 +22,8 @@ export var UserSlice = createSlice({
     referralpoint: null,
     service: [],
     bookingid: null,
+    planid: null,
+    planname: null,
   },
   reducers: {
     setPhone: (state, action) => {
@@ -100,6 +102,14 @@ export var UserSlice = createSlice({
     setBookingid: (state, action) => {
       state.bookingid = action.payload;
     },
+    setreferralpoint: (state, action) => {
+      console.log('From Redux', JSON.stringify(action.payload));
+      state.planid = action.payload;
+    },
+    setreferralpoint: (state, action) => {
+      console.log('From Redux', JSON.stringify(action.payload));
+      state.planname = action.payload;
+    },
     logout: (state, action) => {
       //
       //   alert("From Redux",JSON.stringify(action.payload))
@@ -114,7 +124,7 @@ export var UserSlice = createSlice({
       state.slotid = null;
       state.service = [];
       (state.latitude = null), (state.longitude = null);
-      state.locationOf = null;
+      (state.planid = null), (state.planname = null), (state.locationOf = null);
       state.sname = null;
       state.surl = null;
       state.bookingid = null;
@@ -181,6 +191,12 @@ export const getreferralpoint = state => {
 export const getBookingid = state => {
   return state.user.bookingid;
 };
+export const getPlanid = state => {
+  return state.user.planid;
+};
+export const getplanname = state => {
+  return state.user.planname;
+};
 export const {
   setPhone,
   setToken,
@@ -201,5 +217,7 @@ export const {
   setSurl,
   setreferralpoint,
   setBookingid,
+  setPlanid,
+  setPlanname,
 } = UserSlice.actions;
 export default UserSlice.reducer;

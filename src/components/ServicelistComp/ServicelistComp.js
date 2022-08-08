@@ -1,50 +1,54 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
-import statium from '../../assets/img/Sports/Net.png';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+// import statium from '../../assets/img/Sports/Net.png';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Colors from '../Colors';
-import { AirbnbRating } from 'react-native-ratings';
-import cricketbat from '../../assets/img/Sports/Cricket_small.png';
-import { useNavigation } from '@react-navigation/native';
-import { getUser, setUser,setSlist, getUsersportsId } from '../../../Redux/slices/userSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import {AirbnbRating} from 'react-native-ratings';
+import {useNavigation} from '@react-navigation/native';
+import {
+  getUser,
+  setUser,
+  setSlist,
+  getUsersportsId,
+} from '../../../Redux/slices/userSlice';
+import {useSelector, useDispatch} from 'react-redux';
 
 export default function ServicelistComp(props) {
   var [selectd, setSlected] = useState(false);
   const navigation = useNavigation();
   var [push, setPush] = useState([]);
   const [theArray, setTheArray] = useState();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   // const itemSelected = () => {
   //   setSlected(!selectd);
-   
+
   // };
 
-  var x= props.service._id;
+  var x = props.service._id;
 
-//   function sagarika(id){
-//     alert(id)
-//     setSlected(!selectd);
-//     if(!selectd){
-//       push.push(id)
-//       alert('se',push)
-//       dispatch(setSlist(push))
-//     }
-//     else{
-// if (push.indexOf(5) > -1) {
-//   push.splice(index, 1); 
-// }
-     
-//       dispatch(setSlist(push))
-//       alert('un',push)
-//     }
-//   }
-function sagarika(id){
-  setSlected(!selectd);
-  setTheArray(prevArray => [...prevArray, id])
-  alert(theArray)
-}
+  //   function sagarika(id){
+  //     alert(id)
+  //     setSlected(!selectd);
+  //     if(!selectd){
+  //       push.push(id)
+  //       alert('se',push)
+  //       dispatch(setSlist(push))
+  //     }
+  //     else{
+  // if (push.indexOf(5) > -1) {
+  //   push.splice(index, 1);
+  // }
+
+  //       dispatch(setSlist(push))
+  //       alert('un',push)
+  //     }
+  //   }
+  function sagarika(id) {
+    setSlected(!selectd);
+    setTheArray(prevArray => [...prevArray, id]);
+    alert(theArray);
+  }
   return (
     <View
       style={{
@@ -61,8 +65,8 @@ function sagarika(id){
       }}>
       <View>
         <Image
-          source={statium}
-          style={{ height: 110, borderRadius: 10, width: '100%' }}
+          //  source={statium}
+          style={{height: 110, borderRadius: 10, width: '100%'}}
           resizeMode="cover"
         />
       </View>
@@ -82,8 +86,7 @@ function sagarika(id){
           }}>
           {props.service.serviceName}
         </Text>
-        <View style={{ flexDirection: 'row' }}>
-          <Image style={{ height: 30, width: 30 }} source={cricketbat} />
+        <View style={{flexDirection: 'row'}}>
           <Text
             style={{
               fontFamily: 'ReadexPro-Bold',
@@ -96,10 +99,13 @@ function sagarika(id){
           </Text>
         </View>
       </View>
-      <Text style={{
-        fontFamily: 'ReadexPro-Bold',
-        letterSpacing: 1, fontSize: 12, color: '#FAC516'
-      }}>
+      <Text
+        style={{
+          fontFamily: 'ReadexPro-Bold',
+          letterSpacing: 1,
+          fontSize: 12,
+          color: '#FAC516',
+        }}>
         ₹ {props.service.servicePrice}/hour
       </Text>
 
@@ -111,7 +117,9 @@ function sagarika(id){
           marginBottom: 10,
         }}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('Servicedetails', props.service._id)}
+          onPress={() =>
+            navigation.navigate('Servicedetails', props.service._id)
+          }
           style={{
             borderWidth: 1,
             borderRadius: 5,
@@ -135,7 +143,9 @@ function sagarika(id){
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-         onPress={()=>{sagarika(props.service._id)}}
+          onPress={() => {
+            sagarika(props.service._id);
+          }}
           style={{
             borderWidth: 1,
             borderRadius: 5,

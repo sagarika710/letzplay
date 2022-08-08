@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View, Dimensions, Image} from 'react-native';
 import React from 'react';
-import coach from '../../assets/img/coach.png';
+// import coach from '../../assets/img/coach.png';
 import Colors from '../Colors';
 import {List} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -20,7 +20,7 @@ export default function OurCoaches(props) {
       }}>
       <View>
         <Image
-          source={coach}
+          // source={coach}
           style={{
             backgroundColor: '#FAC516',
             borderRadius: 10,

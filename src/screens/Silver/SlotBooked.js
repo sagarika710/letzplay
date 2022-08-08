@@ -2,7 +2,6 @@ import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Topbar from '../../components/Topbar';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import bat from '../../assets/img/cricketbat.png';
 
 export default function SlotBooked({navigation}) {
   return (
@@ -57,7 +56,6 @@ export default function SlotBooked({navigation}) {
             </Text>
           </View>
           <View style={{flexDirection: 'row'}}>
-            <Image source={bat} />
             <Text style={{color: '#717171', fontWeight: '500'}}>Cricket</Text>
           </View>
         </View>

@@ -52,6 +52,7 @@ function VerificationScreen({navigation, route}) {
           dispatch(setPhone(res.data.user.phone_number));
           dispatch(setDOB(res.data.user.dob));
           dispatch(setreferralpoint(res.data.refferal_code));
+          console.log('res.data.user_data.plan_id', res.data.user_data.plan_id);
           if (location) {
             navigation.navigate('Tab');
           } else {

@@ -11,12 +11,12 @@ import React, {useState} from 'react';
 import Topbar from '../Topbar';
 import ImageView from 'react-native-image-viewing';
 
-const sData = [
-  {id: 1, img: require('../../assets/img/stadium.png')},
-  {id: 2, img: require('../../assets/img/bannerimg.png')},
-  {id: 3, img: require('../../assets/img/stadium.png')},
-  {id: 4, img: require('../../assets/img/commingsoon.png')},
-];
+// const sData = [
+//   {id: 1, img: require('../../assets/img/stadium.png')},
+//   {id: 2, img: require('../../assets/img/bannerimg.png')},
+//   {id: 3, img: require('../../assets/img/stadium.png')},
+//   {id: 4, img: require('../../assets/img/commingsoon.png')},
+// ];
 
 const images = [
   {
@@ -49,7 +49,7 @@ export default function SliderImageView({navigation}) {
         disableIntervalMomentum={true}
         snapToAlignment={'start'}
         snapToInterval={mWidth}>
-        {sData.map(item => (
+        {/* {sData.map(item => (
           <View
             style={{
               alignItems: 'center',
@@ -66,7 +66,7 @@ export default function SliderImageView({navigation}) {
               resizeMode="cover"
             />
           </View>
-        ))}
+        ))} */}
       </ScrollView>
     </View>
   );

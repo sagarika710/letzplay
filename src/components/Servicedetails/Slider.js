@@ -8,14 +8,7 @@ import {
   alert,
 } from 'react-native';
 import React, {useState} from 'react';
-import stadium from '../../assets/img/stadium.png';
-
-const sData = [
-  {id: 1, img: require('../../assets/img/Sports/Net.png')},
-  {id: 2, img: require('../../assets/img/bannerimg.png')},
-  {id: 3, img: require('../../assets/img/stadium.png')},
-  {id: 4, img: require('../../assets/img/bannerimg.png')},
-];
+//import stadium from '../../assets/img/stadium.png';
 
 export default function Slider(props) {
   const [selected, setSelected] = useState(1);
@@ -77,11 +70,11 @@ export default function Slider(props) {
       <TouchableOpacity
         onPress={props.openFullView}
         style={{position: 'absolute', right: 0, marginTop: 190, padding: 5}}>
-        <Image
+        {/* <Image
           source={stadium}
           style={{width: 75, height: 55, borderRadius: 10}}
           blurRadius={50}
-        />
+        /> */}
 
         <Text
           style={{

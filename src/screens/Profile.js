@@ -114,11 +114,25 @@ export default function Profile({navigation}) {
       <View style={{marginHorizontal: 40, marginTop: 40}}>
         <TouchableOpacity
           style={styles.mainview}
+          onPress={() => navigation.navigate('Stadiumlistmember')}>
+          <View style={styles.box}>
+            <Image
+              style={{height: 22, width: 22, marginRight: 15}}
+              //   source={require('../assets/img/Sports/booking_icon.png')}
+            />
+            <Text style={styles.profiletxt}>Book Slot</Text>
+          </View>
+          <View>
+            <Icon name="keyboard-arrow-right" size={16} color={'#0003c1'} />
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.mainview}
           onPress={() => navigation.navigate('Bookinghistory')}>
           <View style={styles.box}>
             <Image
               style={{height: 22, width: 22, marginRight: 15}}
-              source={require('../assets/img/Sports/booking_icon.png')}
+              //   source={require('../assets/img/Sports/booking_icon.png')}
             />
             <Text style={styles.profiletxt}>Booking History</Text>
           </View>

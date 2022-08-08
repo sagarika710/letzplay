@@ -79,6 +79,9 @@ export default function Ragistration(props) {
           dispatch(setPhone(res.data.user_data.phone_number));
           dispatch(setDOB(res.data.user_data.dob));
           dispatch(setreferralpoint(res.data.user_data.refferal_code));
+          console.log('res.data.user_data.plan_id', res.data.user_data.plan_id);
+          if (res.data.user_data.plan_id != null) {
+          }
           navigation.navigate('Location');
         }
       })
