@@ -10,7 +10,6 @@ import {
   Animated,
 } from 'react-native';
 import React, {useState, useRef} from 'react';
-import stadium from '../../assets/img/stadium.png';
 
 export default function StadiumdetailsSlider(props) {
   const [selectedItem, setSelectedItem] = useState(
@@ -18,45 +17,6 @@ export default function StadiumdetailsSlider(props) {
   );
   const mWidth = Dimensions.get('screen').width;
   const mHeight = Dimensions.get('screen').height;
-
-  const DATA = [
-    {
-      id: 1,
-      img: require('../../assets/img/stadium.png'),
-    },
-    {
-      id: 2,
-      img: require('../../assets/img/herocarousal.png'),
-    },
-    {
-      id: 3,
-      img: require('../../assets/img/stadium.png'),
-    },
-    {
-      id: 4,
-      img: require('../../assets/img/herocarousal.png'),
-    },
-    {
-      id: 5,
-      img: require('../../assets/img/stadium.png'),
-    },
-    {
-      id: 6,
-      img: require('../../assets/img/herocarousal.png'),
-    },
-    {
-      id: 7,
-      img: require('../../assets/img/stadium.png'),
-    },
-    {
-      id: 8,
-      img: require('../../assets/img/herocarousal.png'),
-    },
-    {
-      id: 9,
-      img: require('../../assets/img/stadium.png'),
-    },
-  ];
 
   return (
     <View>

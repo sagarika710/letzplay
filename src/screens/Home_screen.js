@@ -37,13 +37,6 @@ import {useSelector, useDispatch} from 'react-redux';
 import Geocoder from 'react-native-geocoding';
 const Home = props => {
   //lert(JSON.stringify( user.phone))
-  var images = [
-    require('../assets/img/bannerimg.png'),
-    require('../assets/img/bannerimg.png'),
-    require('../assets/img/bannerimg.png'),
-    require('../assets/img/bannerimg.png'),
-    require('../assets/img/bannerimg.png'),
-  ];
 
   const [sportsCentres, setsportsCentres] = useState(null);
   const [Image, setImage] = useState();
@@ -71,8 +64,8 @@ const Home = props => {
   useEffect(() => {
     apicaller(
       // `get-nearby-category?longitude=72.4997&latitude=22.30`,
-      //   `get-nearby-category?longitude=${lat}&latitude=${lang}`,
-      'get-nearby-category?longitude=85.8343254&latitude=20.3596102',
+      `get-nearby-category?longitude=${lang}&latitude=${lat}`,
+      // 'get-nearby-category?longitude=85.8343254&latitude=20.3596102',
       null,
       'get',
       null,
@@ -89,8 +82,8 @@ const Home = props => {
   // sports center
   useEffect(() => {
     apicaller(
-      // ` sports-center?longitude=${lat}&latitude=${lang}`,
-      'sports-center?longitude=85.8343254&latitude=20.3596102',
+      ` sports-center?longitude=${lang}&latitude=${lat}`,
+      //     'sports-center?longitude=85.8343254&latitude=20.3596102',
       null,
       'get',
       `Bearer ${Token}`,

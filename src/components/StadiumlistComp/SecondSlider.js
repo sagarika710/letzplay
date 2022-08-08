@@ -13,24 +13,24 @@ import Icon from 'react-native-vector-icons/Entypo';
 
 const mWidth = Dimensions.get('screen').width;
 const mHeight = Dimensions.get('screen').height;
-const images = [
-  {
-    img: require('../../assets/img/stadium.png'),
-  },
-  {
-    img: require('../../assets/img/stadium.png'),
-  },
-  {
-    img: require('../../assets/img/stadium.png'),
-  },
-  {
-    img: require('../../assets/img/stadium.png'),
-  },
-  //   'https://images.unsplash.com/photo-1455620611406-966ca6889d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1130&q=80',
-  //   'https://images.unsplash.com/photo-1455620611406-966ca6889d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1130&q=80',
-  //   'https://images.unsplash.com/photo-1455620611406-966ca6889d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1130&q=80',
-  //   'https://images.unsplash.com/photo-1455620611406-966ca6889d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1130&q=80',
-];
+// const images = [
+//   {
+//     img: require('../../assets/img/stadium.png'),
+//   },
+//   {
+//     img: require('../../assets/img/stadium.png'),
+//   },
+//   {
+//     img: require('../../assets/img/stadium.png'),
+//   },
+//   {
+//     img: require('../../assets/img/stadium.png'),
+//   },
+//   //   'https://images.unsplash.com/photo-1455620611406-966ca6889d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1130&q=80',
+//   //   'https://images.unsplash.com/photo-1455620611406-966ca6889d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1130&q=80',
+//   //   'https://images.unsplash.com/photo-1455620611406-966ca6889d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1130&q=80',
+//   //   'https://images.unsplash.com/photo-1455620611406-966ca6889d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1130&q=80',
+// ];
 export default function SecondSlider() {
   const [ImgActive, setImageActive] = useState(0);
   onChange = nativeEvent => {

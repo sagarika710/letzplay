@@ -7,7 +7,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
-import statium from '../../assets/img/stadium.png';
+
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icons from 'react-native-vector-icons/AntDesign';
 import Colors from '../Colors';
@@ -18,7 +18,7 @@ import Carousel from './Carousel';
 import SecondSlider from './SecondSlider';
 import axios from 'axios';
 import {useDispatch, useSelector} from 'react-redux';
-import {getId, getToken} from '../../../Redux/slices/userSlice';
+import {getId, getToken, setStadid} from '../../../Redux/slices/userSlice';
 import {apicaller} from '../../screens/api';
 
 export default function Stadiumlistcomp(props) {
@@ -227,7 +227,10 @@ export default function Stadiumlistcomp(props) {
           </Text>
         </View>
         <TouchableOpacity
-          onPress={() => navigation.navigate('Stadiumdetails', props.data._id)}
+          onPress={() => {
+            navigation.navigate('Stadiumdetails', props.data._id),
+              dispatch(setStadid(item.sports_center_id));
+          }}
           style={{
             borderWidth: 1,
             borderRadius: 8,

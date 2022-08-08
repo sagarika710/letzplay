@@ -9,7 +9,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
-import cricketbat from '../../assets/img/cricketbat.png';
+
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Colors from '../Colors';
 import {List} from 'react-native-paper';
@@ -27,38 +27,6 @@ import {
   setSurl,
 } from '../../../Redux/slices/userSlice';
 import {useSelector, useDispatch} from 'react-redux';
-const SportData = [
-  {
-    id: 1,
-    title: 'Cricket',
-    icons: require('../../assets/img/Sports/Cricket_small.png'),
-    desc: 'Cricket',
-  },
-  {
-    id: 2,
-    title: 'Footbal',
-    icons: require('../../assets/img/Sports/Football_small.png'),
-    desc: 'Footbal',
-  },
-  {
-    id: 3,
-    title: 'Badminton',
-    icons: require('../../assets/img/Sports/Badminton_small.png'),
-    desc: 'Badminton',
-  },
-  {
-    id: 4,
-    title: 'Gym',
-    icons: require('../../assets/img/Sports/Gym_small.png'),
-    desc: 'Gym',
-  },
-  {
-    id: 5,
-    title: 'Cricket',
-    icons: require('../../assets/img/Sports/Tennis_small.png'),
-    desc: 'Tennis',
-  },
-];
 
 export default function SportsAvailabeHere(props) {
   const [selected, setSelected] = useState(1);

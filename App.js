@@ -24,6 +24,8 @@ import Location from './src/screens/Location';
 import VerificationScreen from './src/screens/Otp_screen';
 import Stadiumlist from './src/screens/Stadiumlist';
 import Stadiumdetails from './src/screens/Stadiumdetails';
+import Stadiumlistmember from './src/screens/Stadiumlistmember';
+import Stadiumdetailsmember from './src/screens/Stadiumdetailsmember';
 import Servicelist from './src/screens/Servicelist';
 import Servicedetails from './src/screens/Servicedetails';
 import Shop from './src/screens/Shop';
@@ -380,6 +382,19 @@ const App = () => {
               name="Modal"
               component={Modal}
               options={{title: '', headerShown: false}}
+            />
+
+            <Stack.Screen
+              name="Stadiumlistmember"
+              component={Stadiumlistmember}
+              options={{
+                headerTitle: props => <Headert {...props} title={'STADIUMS'} />,
+              }}
+            />
+            <Stack.Screen
+              name="Stadiumdetailsmember"
+              component={Stadiumdetailsmember}
+              options={{headerShown: false}}
             />
           </Stack.Navigator>
         </NavigationContainer>

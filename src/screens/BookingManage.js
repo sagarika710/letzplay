@@ -112,10 +112,6 @@ export default function BookingManage({navigation}) {
                 {nameRd}
               </Text>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <Image
-                  style={{height: 30, width: 30}}
-                  source={require('../assets/img/Sports/Cricket_small.png')}
-                />
                 <Text
                   style={{
                     fontSize: 12,

@@ -11,8 +11,7 @@ import {
 import React, {useState, useEffect} from 'react';
 import Topbar from '../components/Topbar';
 import Colors from '../components/Colors';
-import statium from '../assets/img/Sports/Net.png';
-import cricketbat from '../assets/img/Sports/Cricket_small.png';
+
 import {useNavigation} from '@react-navigation/native';
 import {api} from '../styles/Api';
 import {

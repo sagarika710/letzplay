@@ -12,7 +12,7 @@ import React, {useState, useEffect} from 'react';
 import Topbar from '../components/Topbar';
 import Slider from '../components/Servicedetails/Slider';
 import Colors from '../components/Colors';
-import cricketbat from '../assets/img/Sports/Cricket_small.png';
+
 import SubHeadings from '../components/StadiumdetailsComp/SubHeadings';
 import Ourfacilities from '../components/StadiumdetailsComp/Ourfacilities';
 import HealthandHygine from '../components/StadiumdetailsComp/HealthandHygine';
@@ -102,10 +102,7 @@ export default function Servicedetails({navigation, route}) {
               {data.service_name}
             </Text>
             <View style={{flexDirection: 'row'}}>
-              <Image
-                style={{height: 30, width: 30}}
-                // source={{uri: cricketbat}}
-              />
+              <Image style={{height: 30, width: 30}} />
               <Text
                 style={{
                   fontFamily: 'ReadexPro-Bold',

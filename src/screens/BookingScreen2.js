@@ -10,6 +10,7 @@ import {
   ScrollView,
   Linking,
   TextInput,
+  ActivityIndicator,
 } from 'react-native';
 import {
   getToken,
@@ -21,6 +22,9 @@ import {
   getId,
   getSportid,
   getSlotid,
+  getEmail,
+  getName,
+  getUserPhone,
 } from '../../Redux/slices/userSlice';
 import {useSelector, useDispatch} from 'react-redux';
 // packages import
@@ -47,6 +51,7 @@ export default function BookingScreen2({navigation}) {
   const [DOB, setDOB] = React.useState();
   const [extra, setExtra] = React.useState(1);
   const refRBSheet = useRef();
+  const refRBSheetOne = useRef();
   const forwardSlashRegex = /\/.*\//;
 
   const name = 'Some Sports';
@@ -58,12 +63,17 @@ export default function BookingScreen2({navigation}) {
   const [isSelf, setIsSelf] = useState(true);
   const [extraMems, setExtraMems] = useState([]);
   const [namedata, setNamedata] = useState([]);
+  const [selfOtherData, setSelfOtherData] = useState([]);
   const [extraName, setExtraName] = useState('');
   const [ids, setIds] = useState('');
   const [extraPhone, setExtraPhone] = useState('');
   const [extraPhonetes, setExtraPhonetes] = useState('');
   const [extraEmail, setExtraEmail] = useState('');
   const [extraDOB, setExtraDOB] = useState('');
+  const [extraNameOne, setExtraNameOne] = useState('');
+  const [extraPhoneOne, setExtraPhoneOne] = useState('');
+  const [extraEmailOne, setExtraEmailOne] = useState('');
+
   const [date, setDate] = useState(new Date());
   const [show, setShow] = useState();
   const [open, setOpen] = useState(false);
@@ -80,6 +90,10 @@ export default function BookingScreen2({navigation}) {
   const [errn, setErrn] = useState(false);
   const [emailerror, setEmailerror] = useState();
   const [othersSelected, setOthersSelected] = useState(false);
+  const [isLoading, setisLoading] = useState(false);
+  const emailRd = useSelector(getEmail);
+  const nameRd = useSelector(getName);
+  const phoneRd = useSelector(getUserPhone);
   const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
   console.log('okm', services);
   useEffect(() => {
@@ -100,6 +114,7 @@ export default function BookingScreen2({navigation}) {
 
   console.log(price.price_per_hr * 0.18);
   function booking() {
+    setisLoading(true);
     var axios = require('axios');
     var data = JSON.stringify({
       user: userid,
@@ -107,19 +122,39 @@ export default function BookingScreen2({navigation}) {
       sports_category_id: sportsid,
       sports_center_id: id,
       booking_for: namedata,
+      booking_for_other_with_self: selfOtherData,
       booking_time: new Date().toLocaleTimeString(),
       slot_id: slot_id,
       price: price.price_per_hr,
       other_charges: 0,
     });
 
+    console.log('data is', data);
+
     apicaller('addbookings', data, 'post', null)
       .then(function (response) {
         console.log('addbooking', JSON.stringify(response.data._id));
-        setIds(response.data._id);
+        // setIds(response.data._id);
         console.log('Booking Response', response.data);
+        // setisLoading(false);
+        // razor(response.data._id);
+        // console.log('Booking Response', response.data._id);
 
-        call();
+        // call();
+        apicaller(
+          `get-order-id/${response.data._id}`,
+          null,
+          'get',
+          `Bearer ${Token}`,
+        )
+          .then(res => {
+            console.log('link', res.data);
+            setisLoading(false);
+            razor(res.data.order_id);
+          })
+          .catch(e => {
+            console.log(e.value);
+          });
       })
 
       .catch(function (error) {
@@ -128,13 +163,14 @@ export default function BookingScreen2({navigation}) {
   }
 
   //useEffect(() => { }, [namedata]);
-  console.log('namedata', namedata);
+  // console.log('namedata', namedata);
 
-  function call() {
+  async function call() {
     console.log(ids);
     apicaller(`get-order-id/${ids}`, null, 'get', `Bearer ${Token}`)
       .then(res => {
         console.log('link', res.data);
+        setisLoading(false);
         razor(res.data.order_id);
       })
       .catch(e => {
@@ -151,9 +187,9 @@ export default function BookingScreen2({navigation}) {
 
       order_id: opid, //Replace this with an order_id created using Orders API.
       prefill: {
-        email: 'sagarika@gmail.com',
-        contact: '7608053853',
-        name: 'sagarika Kumar',
+        email: emailRd,
+        contact: phoneRd,
+        name: nameRd,
       },
       theme: {color: '#53a20e'},
     };
@@ -162,10 +198,12 @@ export default function BookingScreen2({navigation}) {
         // handle success
         // alert(`Success: ${data.razorpay_payment_id}`);
         navigation.navigate('BookingSuccess');
+        setisLoading(false);
       })
       .catch(error => {
         // handle failure
         alert(`Error: ${error.code} | ${error.description}`);
+        setisLoading(false);
       });
   }
   // if (namedata) {
@@ -193,7 +231,7 @@ export default function BookingScreen2({navigation}) {
         <TouchableOpacity
           onPress={() => {
             setIsSelf(true);
-            namedata.length = 0;
+            setNamedata([]);
           }}
           style={{
             height: 64,
@@ -248,10 +286,114 @@ export default function BookingScreen2({navigation}) {
             Self
           </Text>
         </TouchableOpacity>
+
+        <ScrollView>
+          <View
+            style={{
+              display: selfOtherData.length > 0 ? 'flex' : 'none',
+              marginHorizontal: 10,
+              height: 100,
+              justifyContent: 'space-between',
+              marginTop: 20,
+            }}>
+            <Text
+              style={{
+                fontSize: 14,
+                color: '#222',
+                fontFamily: 'ReadexPro-Bold',
+                letterSpacing: 0.5,
+              }}>
+              Members
+            </Text>
+            {selfOtherData &&
+              selfOtherData.map(qwe => (
+                <>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                    }}>
+                    <Text
+                      style={{
+                        fontSize: 12,
+                        color: '#222',
+                        fontFamily: 'ReadexPro-Medium',
+                      }}>
+                      {qwe.other_user_name}
+                    </Text>
+
+                    <Text
+                      style={{
+                        fontSize: 12,
+                        color: '#222',
+                        fontFamily: 'ReadexPro-Medium',
+                      }}>
+                      {qwe.other_user_phone}
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: 12,
+                        color: '#222',
+                        fontFamily: 'ReadexPro-Medium',
+                      }}>
+                      {qwe.other_user_dob}
+                    </Text>
+                    <TouchableOpacity
+                      onPress={() => {
+                        // alert(qwe.other_user_phone);
+
+                        const indexO = selfOtherData.indexOf(qwe);
+                        alert(indexO);
+                      }}>
+                      <Text style={{color: 'red', marginLeft: 6}}>
+                        <Icon name="trash" size={15} />
+                      </Text>
+                      <Text style={{color: 'red', fontSize: 7}}>Remove</Text>
+                    </TouchableOpacity>
+                  </View>
+                </>
+              ))}
+          </View>
+          {isSelf ? (
+            <TouchableOpacity
+              onPress={() => {
+                refRBSheetOne.current.open();
+              }}
+              style={{
+                flexDirection: 'row',
+                margin: 10,
+
+                borderBottomColor: '#DFDDDD',
+                borderBottomWidth: 1,
+                paddingBottom: 10,
+
+                alignItems: 'center',
+              }}>
+              <Text
+                style={{
+                  fontFamily: 'ReadexPro-Bold',
+                  letterSpacing: 1,
+                  fontSize: 16,
+                  color: '#292a2e',
+                }}>
+                Add More Members With You
+              </Text>
+              <TouchableOpacity
+                onPress={() => {
+                  refRBSheetOne.current.open();
+                }}>
+                <Text style={{color: '#0003C1', marginLeft: 10}}>
+                  <Icon name="plus-square-o" size={15} />
+                </Text>
+              </TouchableOpacity>
+            </TouchableOpacity>
+          ) : null}
+        </ScrollView>
         <TouchableOpacity
           onPress={() => {
             setIsSelf(false);
             refRBSheet.current.open();
+            setSelfOtherData([]);
           }}
           style={{
             height: 64,
@@ -573,7 +715,7 @@ export default function BookingScreen2({navigation}) {
                     fontSize: 14,
                     color: '#717171',
                   }}>
-                  Player X 1
+                  Player X {selfOtherData?.length + 1}
                 </Text>
               )}
               {namedata && namedata.length > 0 ? (
@@ -596,7 +738,9 @@ export default function BookingScreen2({navigation}) {
                     fontSize: 14,
                     color: '#717171',
                   }}>
-                  ₹ {(price.price_per_hr + price.price_per_hr * 0.18) * 1}{' '}
+                  ₹{' '}
+                  {(price.price_per_hr + price.price_per_hr * 0.18) *
+                    (selfOtherData?.length + 1)}{' '}
                 </Text>
               )}
             </View>
@@ -732,15 +876,19 @@ export default function BookingScreen2({navigation}) {
           // navigation.navigate('Payment');
           booking();
         }}>
-        <Text
-          style={{
-            textAlign: 'center',
-            fontFamily: 'ReadexPro-Bold',
-            letterSpacing: 1,
-            color: 'white',
-          }}>
-          Procced to pay
-        </Text>
+        {isLoading ? (
+          <ActivityIndicator />
+        ) : (
+          <Text
+            style={{
+              textAlign: 'center',
+              fontFamily: 'ReadexPro-Bold',
+              letterSpacing: 1,
+              color: 'white',
+            }}>
+            Procced to pay
+          </Text>
+        )}
       </TouchableOpacity>
 
       {/* BottomSheet */}
@@ -863,6 +1011,143 @@ export default function BookingScreen2({navigation}) {
             <TouchableOpacity
               onPress={() => {
                 refRBSheet.current.close();
+                setIsSelf(true);
+              }}
+              style={[styles.btn, {backgroundColor: 'red'}]}>
+              <Text
+                style={{
+                  textAlign: 'center',
+                  color: 'white',
+                  fontSize: 14,
+                  fontWeight: '700',
+                }}>
+                Cancel
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </RBSheet>
+
+      <RBSheet
+        ref={refRBSheetOne}
+        height={480}
+        closeOnPressMask={false}
+        closeOnDragDown={false}
+        closeOnPressBack={false}
+        customStyles={{
+          wrapper: {
+            backgroundColor: '#2222229a',
+          },
+          container: {
+            backgroundColor: '#ffffff',
+            borderTopLeftRadius: 30,
+            borderTopRightRadius: 30,
+          },
+          // draggableIcon: {
+          //     backgroundColor: '#000',
+          // },
+        }}>
+        <View style={{flex: 1, marginHorizontal: 20}}>
+          <View style={styles.box1}>
+            <View style={styles.textAreaContainer}>
+              <Iconf name="user" size={20} color="#9C9C9C" />
+              <TextInput
+                style={styles.textArea}
+                underlineColorAndroid="transparent"
+                placeholder="Full Name"
+                placeholderTextColor="#9C9C9C"
+                multiline={true}
+                onChangeText={setExtraNameOne}
+              />
+            </View>
+            {errn && <Text>Invalid Name</Text>}
+            <View style={styles.textAreaContainer}>
+              <Iconf name="mail" size={20} color="#9C9C9C" />
+              <TextInput
+                style={styles.textArea}
+                underlineColorAndroid="transparent"
+                placeholder="Email Id"
+                placeholderTextColor="#9C9C9C"
+                multiline={true}
+                onChangeText={setExtraEmailOne}
+              />
+            </View>
+            {emailerror && <Text>Invalid Email</Text>}
+            <View style={styles.textAreaContainer}>
+              <Iconf name="smartphone" size={20} color="#9C9C9C" />
+              <TextInput
+                style={styles.textArea}
+                underlineColorAndroid="transparent"
+                placeholder="Mobile Number"
+                placeholderTextColor="#9C9C9C"
+                multiline={true}
+                onChangeText={setExtraPhoneOne}
+              />
+            </View>
+            <TouchableOpacity
+              style={styles.textAreaContainer}
+              onPress={() => setOpen(true)}>
+              <Icons name="calendar" size={20} color="#9C9C9C" />
+
+              <TextInput
+                editable={false}
+                selectTextOnFocus={false}
+                style={[styles.textArea, {color: 'black'}]}
+                maxLength={10}
+                value={show}
+                placeholder="Enter DOB (DD/MM/YYYY)"
+                placeholderTextColor="#9C9C9C"
+                autoCapitalize="none"
+                returnKeyType="next"
+              />
+            </TouchableOpacity>
+            {doberr && <Text>Age shouldbe gratethen 5 year</Text>}
+            <TouchableOpacity
+              style={styles.btn}
+              // onPress={() => {
+              //   let newExtras = {
+              //     other_user_name: extraName,
+              //     other_user_email: extraEmail,
+              //     other_user_phone: extraPhone,
+              //     other_user_dob: show,
+              //   };
+              //   setExtraPhonetes('bfrtb');
+              //   namedata.push(newExtras);
+              //   refRBSheet.current.close();
+              // }}
+              onPress={() => {
+                if (extraNameOne.length > 2) {
+                  setErrn(false);
+                  if (reg.test(extraEmailOne)) {
+                    setEmailerror(false);
+                    // if (show.getFullYear() < 2018 && date != '0') {
+                    setDoberr(false);
+                    let newExtrasOne = {
+                      other_user_name: extraNameOne,
+                      other_user_email: extraEmailOne,
+                      other_user_phone: extraPhoneOne,
+                      // other_user_dob: show,
+                    };
+                    // setExtraPhonetes('bfrtb');
+                    selfOtherData.push(newExtrasOne);
+                    refRBSheetOne.current.close();
+                    console.log('Other Data is' + selfOtherData);
+                    // } else {
+                    //   setDoberr(true);
+                  }
+                  // }
+                  else {
+                    setEmailerror(true);
+                  }
+                } else {
+                  setErrn(true);
+                }
+              }}>
+              <Text style={styles.btntext}>Add Member</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                refRBSheetOne.current.close();
                 setIsSelf(true);
               }}
               style={[styles.btn, {backgroundColor: 'red'}]}>

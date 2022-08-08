@@ -10,13 +10,13 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-import Badminton from '../assets/img/gameicon.png';
-import Cricket from '../assets/img/cricket.png';
-import Tennis from '../assets/img/gameicon.png';
-import Gym from '../assets/img/gym.png';
-import Football from '../assets/img/football.png';
+// import Badminton from '../assets/img/gameicon.png';
+// import Cricket from '../assets/img/cricket.png';
+// import Tennis from '../assets/img/gameicon.png';
+// import Gym from '../assets/img/gym.png';
+// import Football from '../assets/img/football.png';
 
-import GameIcon from '../components/GameIcon';
+// import GameIcon from '../components/GameIcon';
 import CalendarPicker from 'react-native-calendar-picker';
 
 import TimeSlot from '../components/TimeSlot';
