@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">241083630563-1644jk8ftjfvkdd2b258g0susbnmfs9p.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">241083630563</string>
+    <string name="google_api_key" translatable="false">AIzaSyBAPjgTzmY5A11PViI4md-yBEZHrnAy38A</string>
+    <string name="google_app_id" translatable="false">1:241083630563:android:54506ae4e278142f0396d6</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBAPjgTzmY5A11PViI4md-yBEZHrnAy38A</string>
+    <string name="google_storage_bucket" translatable="false">letzplay-3cc66.appspot.com</string>
+    <string name="project_id" translatable="false">letzplay-3cc66</string>
+</resources>

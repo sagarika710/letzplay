@@ -17,6 +17,8 @@ import {
   GoogleSigninButton,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
+
 export default function Auth({navigation}) {
   const [type, setType] = useState('0');
   const Token = useSelector(getToken);
@@ -59,38 +61,25 @@ export default function Auth({navigation}) {
     }
   }
 
-  GoogleSignin.configure({
-    webClientId:
-      '763815076264-5dh1e9mpefdnmtq8velpd43vmfvqifnd.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
-  });
-  signIn = async () => {
-    try {
-      await GoogleSignin.hasPlayServices();
-      const userInfo = await GoogleSignin.signIn();
-      this.setState({userInfo});
-    } catch (error) {
-      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        // user cancelled the login flow
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        // operation (e.g. sign in) is in progress already
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        // play services not available or outdated
-      } else {
-        // some other error happened
-      }
-    }
-  };
-  getCurrentUserInfo = async () => {
-    try {
-      const userInfo = await GoogleSignin.signInSilently();
-      this.setState({userInfo});
-    } catch (error) {
-      if (error.code === statusCodes.SIGN_IN_REQUIRED) {
-        // user has not signed in yet
-      } else {
-        // some other error
-      }
-    }
+  // By Adil
+
+  useEffect(() => {
+    GoogleSignin.configure({
+      webClientId:
+        '241083630563-1644jk8ftjfvkdd2b258g0susbnmfs9p.apps.googleusercontent.com',
+      offlineAccess: true,
+    });
+  }, []);
+
+  const signInWithGoogle = async () => {
+    // Get the users ID token
+    const {idToken} = await GoogleSignin.signIn();
+
+    // Create a Google credential with the token
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+    // Sign-in the user with the credential
+    return auth().signInWithCredential(googleCredential);
   };
 
   return (
@@ -132,22 +121,28 @@ export default function Auth({navigation}) {
 
       <View style={styles.box2}>
         <View style={styles.iconback}>
-          <Image
-            style={styles.sicon}
-            source={require('../assets/img/google.png')}
-          />
+          <TouchableOpacity
+            onPress={() =>
+              signInWithGoogle()
+                .then(res => {
+                  console.log(res);
+                  setShowAgreement(true);
+                })
+                .catch(err => console.log(err))
+            }>
+            <Image
+              style={styles.sicon}
+              source={require('../assets/img/google.png')}
+            />
+          </TouchableOpacity>
         </View>
         <View style={styles.iconback}>
-          <Image
-            style={styles.sicon}
-            source={require('../assets/img/Facebook.png')}
-          />
-          {/* <GoogleSigninButton
-            style={{width: 192, height: 48}}
-            size={GoogleSigninButton.Size.Wide}
-            color={GoogleSigninButton.Color.Dark}
-            onPress={() => signIn()}
-          /> */}
+          <TouchableOpacity>
+            <Image
+              style={styles.sicon}
+              source={require('../assets/img/Facebook.png')}
+            />
+          </TouchableOpacity>
         </View>
         <View style={styles.iconback}>
           <Image

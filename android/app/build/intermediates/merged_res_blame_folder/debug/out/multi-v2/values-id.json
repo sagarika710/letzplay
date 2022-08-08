@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-id\\values-id.xml",
+            "outputFile": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-id\\values-id.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\0db22589bfb7859ba39475d2ffc825a4\\transformed\\jetified-play-services-wallet-18.1.3\\res\\values-id\\values.xml",
+                    "source": "C:\\Users\\adilr\\.gradle\\caches\\transforms-3\\0db22589bfb7859ba39475d2ffc825a4\\transformed\\jetified-play-services-wallet-18.1.3\\res\\values-id\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

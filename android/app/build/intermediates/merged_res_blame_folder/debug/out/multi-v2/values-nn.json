@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-nn\\values-nn.xml",
+            "outputFile": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-nn\\values-nn.xml",
             "map": [
                 {
-                    "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\node_modules\\react-native-date-picker\\android\\build\\intermediates\\packaged_res\\debug\\values-nn\\values-nn.xml",
+                    "source": "C:\\New Folder\\letzplay\\node_modules\\react-native-date-picker\\android\\build\\intermediates\\packaged_res\\debug\\values-nn\\values-nn.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

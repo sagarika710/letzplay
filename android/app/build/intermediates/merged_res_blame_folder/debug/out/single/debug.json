@@ -1,122 +1,370 @@
 [
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\drawable\\ic_launcher_foreground.xml"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_node_modules_reactnativeratings_dist_images_bell.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnativeratings_dist_images_bell.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_adaptive_back.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_adaptive_back.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_direction.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_direction.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_node_modules_reactnativeratings_dist_images_rocket.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnativeratings_dist_images_rocket.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_gym_small.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_gym_small.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_adaptive_back.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_adaptive_back.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_coach.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_coach.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-ldpi_ic_launcher.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-ldpi\\ic_launcher.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_profile_bg.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_profile_bg.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_node_modules_reactnativepaper_src_assets_backchevron.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnativepaper_src_assets_backchevron.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-ldpi_ic_launcher.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-ldpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_adaptive_fore.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_adaptive_fore.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_adaptive_back.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_adaptive_back.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_badminton_small.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_badminton_small.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_support_icon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_support_icon.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_herocarousal.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_herocarousal.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_node_modules_reactnativeratings_dist_images_star.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnativeratings_dist_images_star.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_adaptive_fore.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_adaptive_fore.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_node_modules_reactnativeratings_dist_images_airbnbstar.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnativeratings_dist_images_airbnbstar.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_adaptive_fore.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_adaptive_fore.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_booking_icon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_booking_icon.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_adaptive_fore.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_adaptive_fore.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_privacy_icon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_privacy_icon.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_node_modules_reactnativeratings_dist_images_heart.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnativeratings_dist_images_heart.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_football_small.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_football_small.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_adaptive_back.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_adaptive_back.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_spo.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_spo.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_adaptive_fore.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_adaptive_fore.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_refer_a_friend.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_refer_a_friend.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_adaptive_back.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_adaptive_back.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "E:\\LETZPLAY_UPDATED\\Letzplay\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_goldcard.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_goldcard.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_successful.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_successful.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-xhdpi\\node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_silvercard.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_silvercard.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_tennis_small.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_tennis_small.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-xhdpi\\node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_facebook.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_facebook.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_football.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_football.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_gym.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_gym.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_bannerimg.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_bannerimg.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_lock.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_lock.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_google.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_google.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_cricketbat.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_cricketbat.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_commingsoon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_commingsoon.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_dot.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_dot.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-xxhdpi\\node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_wishlist_icon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_wishlist_icon.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sportscentreimage.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sportscentreimage.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_rate_icon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_rate_icon.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-xxhdpi\\node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_cricket_icon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_cricket_icon.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_bg.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_bg.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-hdpi\\node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_apple.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_apple.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_location.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_location.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_support.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_support.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_logo.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_logo.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_stadium.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_stadium.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_cricket.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_cricket.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_logout_icon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_logout_icon.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_cricket_small.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_cricket_small.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_refernearn_bg.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_refernearn_bg.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_ellipse.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_ellipse.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_tc_icon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_tc_icon.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_directionblue.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_directionblue.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_faq_icon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_faq_icon.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_sports_net.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_sports_net.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_src_assets_img_gameicon.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\src_assets_img_gameicon.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_node_modules_reactnativeratings_dist_images_airbnbstarselected.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnativeratings_dist_images_airbnbstarselected.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\New Folder\\letzplay\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\New Folder\\letzplay\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_adaptive_fore.png"
     }
 ]
