@@ -82,8 +82,8 @@ const Home = props => {
   // sports center
   useEffect(() => {
     apicaller(
-      ` sports-center?longitude=${lang}&latitude=${lat}`,
-      //     'sports-center?longitude=85.8343254&latitude=20.3596102',
+      // ` sports-center?longitude=${lang}&latitude=${lat}`,
+      'sports-center?longitude=85.8343254&latitude=20.3596102',
       null,
       'get',
       `Bearer ${Token}`,
